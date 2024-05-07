@@ -56,73 +56,67 @@ CloudNativePG and its leadership embrace the following values:
   participation, and there is a clear path up the contributor ladder into leadership
   positions.
 
+## Project Roles
 
-## Maintainers
+### Maintainers
 
-CloudNativePG is made up of a few repositories. The primary repository is the
-[CloudNativePG operator](https://github.com/cloudnative-pg/cloudnative-pg) one,
-which acts as umbrella project for the CloudNativePG community, and lists the
-guidelines that every satellite project adheres to.
-
-The maintainers of each project are kept up to date in the
-[CODEOWNERS](CODEOWNERS) file, which is located in the root folder of the
-project. Maintainers have write access to the repository and can merge their
-own patches or patches from others.
-
-This privilege is granted with some expectation of responsibility: maintainers
-are people who care about the CloudNativePG project and want to help it grow
-and improve. A maintainer is not just someone who can make changes, but someone
-who has demonstrated their ability to collaborate with the team, get the most
-knowledgeable people to review code, contribute high-quality code, and follow
-through to fix issues (in code or tests).
+Maintainers hold a crucial role in the comprehensive development of the entire
+CloudNativePG project and its associated components. This privilege is granted
+with some expectation of responsibility: maintainers are people who care about
+the CloudNativePG project and want to help it grow and improve. A maintainer is
+not just someone who can make changes, but someone who has demonstrated their
+ability to collaborate with the team, get the most knowledgeable people to
+review code, contribute high-quality code, and follow through to fix issues (in
+code or tests).
 
 A maintainer is a contributor to the CloudNativePG project's success and a
 citizen helping the project succeed.
 
-## Becoming a Maintainer
+The maintainers are identified in the [`MAINTAINERS`](MAINTAINERS) file.
 
-To become a Maintainer, you need to demonstrate the following:
+#### Changes in Maintainership
 
-  * commitment to the project:
-    * participate in discussions, contributions, code, and documentation reviews
-      for 6 months or more,
-    * perform reviews for 10 non-trivial pull requests,
-    * contribute 10 non-trivial pull requests and have them merged,
-  * ability to write quality code and/or documentation,
-  * ability to collaborate with the team,
-  * understanding of how the team works (policies, processes for testing and code review, etc.),
-  * understanding of the project's code base and coding and documentation style.
+New maintainers are proposed by an existing maintainer and are elected by a ⅔
+majority maintainers vote. Maintainers can be removed by a ⅔ majority
+maintainers vote, leading to their transition to emeritus status.
 
-A new Maintainer must be proposed by an existing maintainer by starting a new
-[Github discussion under the "Maintainers room" category](https://github.com/cloudnative-pg/cloudnative-pg/discussions/categories/maintainers-room).
+#### Github Project Administration
 
-Two more maintainers need to second the nomination. If no one objects in 5
-working days (Italy's timezone), the nomination is accepted. If anyone objects
-or wants more information, the maintainers discuss and usually come to a
-consensus (within the 5 working days). If issues can't be resolved, there's a
-simple majority vote among current maintainers.
+Members designated as Maintainers will be included in the `maintainers` team,
+where they will possess the `Maintain` role for every CloudNativePG repository.
+Those Maintainers who are interested in assuming administrative
+responsibilities for the organization's repositories can be appointed to the
+`admins` team at any point, granting them the `Admin` role across all
+repositories.
 
-Maintainers who are selected will be granted the necessary GitHub rights,
-and invited to the private maintainer mailing list.
+### Component owners
 
-## Losing Maintainer Status
+The component owners are tasked with the development of specific subprojects or
+components within CloudNativePG. These components may be represented either by
+a separate GitHub repository within the CloudNativePG organization (e.g.,
+`postgres-containers`) or by a subdirectory in a GitHub repository (e.g.,
+`./docs/` in `cloudnativepg`).
 
-If a maintainer is no longer interested or cannot perform the maintainer duties
-listed above, they should volunteer to be moved to emeritus status. If
-possible, try to complete your work or help find someone to pick up your work
-before stepping down.
+The owners of these components are delineated in the
+[`COMPONENT-OWNERS`](COMPONENT-OWNERS) file within this repository, which also
+specifies the component for which each individual is responsible.
 
-If a maintainer has stopped contributing for a reasonable amount of time, an
-existing maintainer may propose to move such maintainers to emeritus list by
-starting a new [Github discussion under the "Maintainers room" category](https://github.com/cloudnative-pg/cloudnative-pg/discussions/categories/maintainers-room), making sure that the maintainer in question is properly mentioned in the discussion via the GitHub handle.
+#### Changes in component ownership
 
-Two more maintainers need to second the nomination. If no one objects in 10
-working days (Italy's timezone), the move to emeritus status is accepted.
-If anyone objects or wants more information, the maintainers discuss and
-usually come to a consensus (within the 10  working days). If issues can't be
-resolved, there's a simple majority vote among current maintainers.
+New component owners can be proposed by any maintainer and are elected by a ⅔
+majority maintainers vote. Component owners can be removed by a ⅔ majority
+maintainers vote.
 
-Emeritus maintainers do not have administration rights in GitHub.
+#### Github Project Administration
+
+Owners of components with dedicated GitHub repositories will be granted `Write`
+access to their respective repositories, enabling them to merge approved pull
+requests. Additionally, component owners will be incorporated into the
+repository's `CODEOWNERS` file, ensuring clear attribution and accountability
+for code contributions.
+
+It's important to note that these owners will not receive `Maintain` or `Admin`
+privileges for any CloudNativePG GitHub repositories."
 
 ## Meetings
 
@@ -160,6 +154,5 @@ or on [the private Maintainer mailing list](mailto:security@cloudnative-pg.io) f
 security or conduct matters. Votes may also be taken during developer meetings.
 Any Maintainer may demand a vote be taken.
 
-Most votes require a simple majority of all Maintainers to succeed. Maintainers
-can be removed by a 2/3 majority vote of all Maintainers, and changes to this
-Governance require a 2/3 vote of all Maintainers.
+Most votes require a simple majority of all Maintainers to succeed, and changes
+to this Governance require a 2/3 vote of all Maintainers.
