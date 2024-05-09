@@ -1,4 +1,4 @@
-# Maintainers
+# CloudNativePG Maintainers
 
 The current maintainers of the CloudNativePG project are (in alphabetical
 order):

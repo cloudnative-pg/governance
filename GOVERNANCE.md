@@ -72,7 +72,7 @@ code or tests).
 A maintainer is a contributor to the CloudNativePG project's success and a
 citizen helping the project succeed.
 
-The maintainers are identified in the [`MAINTAINERS`](MAINTAINERS) file.
+The maintainers are identified in the [`MAINTAINERS.md`](MAINTAINERS.md) file.
 
 #### Changes in Maintainership
 
@@ -98,7 +98,7 @@ a separate GitHub repository within the CloudNativePG organization (e.g.,
 `./docs/` in `cloudnativepg`).
 
 The owners of these components are delineated in the
-[`COMPONENT-OWNERS`](COMPONENT-OWNERS) file within this repository, which also
+[`COMPONENT-OWNERS.md`](COMPONENT-OWNERS.md) file within this repository, which also
 specifies the component for which each individual is responsible.
 
 #### Changes in component ownership
