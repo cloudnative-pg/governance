@@ -4,11 +4,25 @@
 
 **Repository:** [cloudnative-pg/charts](https://github.com/cloudnative-pg/charts)
 
+### Operator Chart
+
+**Folder:** [charts/cloudnativepg](https://github.com/cloudnative-pg/charts/tree/main/charts/cloudnative-pg)
+
+**Owners:**
+
+- Niccolò Fei (@NiccoloFei)
+- Itay Grudev (@itay-grudev)
+- Philippe Scorsolini (@phisco, Maintainer)
+- Jaime Silvela (@jsilvela)
+
+### PostgreSQL Cluster Chart
+
+**Folder:** [charts/cluster](https://github.com/cloudnative-pg/charts/tree/main/charts/cluster)
+
 **Owners:**
 
 - Itay Grudev (@itay-grudev)
 - Philippe Scorsolini (@phisco, Maintainer)
-- Jaime Silvela (@jsilvela)
 
 ## ciclops
 
@@ -27,6 +41,37 @@
 - Gabriele Bartolini (@gbartolini, Maintainer)
 - Jaime Silvela (@jsilvela)
 - Jonathan Battiato (@jbattiato)
+
+## cloudnative-pg
+
+*Note:* this is the main project of the CloudNativePG organisation and it is
+primarily the maintainers' responsibility to manage it.
+
+**Repository:** [cloudnative-pg/cloudnative-pg](https://github.com/cloudnative-pg/cloudnative-pg)
+
+### Documentation
+
+**Folder:** [cloudnative-pg/docs](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/docs)
+
+**Owners:**
+
+- Jaime Silvela (@jsilvela)
+
+### Testing
+
+**Folders:**
+
+- [cloudnative-pg/.github](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/.github)
+- [cloudnative-pg/hack](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/hack)
+- [cloudnative-pg/tests](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/tests)
+
+*Note:* access to additional files might be required.
+
+**Owners:**
+
+- Niccolò Fei (@NiccoloFei)
+- Tao Li (@litaocdl)
+- Jaime Silvela (@jsilvela)
 
 ## grafana-dashboards
 
@@ -55,14 +100,6 @@
 
 - Niccolò Fei (@NiccoloFei)
 - Jonathan Gonzalez (@sxd, Maintainer)
-
-## plugin-pvc-backup
-
-**Repository:** [cloudnative-pg/plugin-pvc-backup](https://github.com/cloudnative-pg/plugin-pvc-backup)
-
-**Owners:**
-
-TODO
 
 ## postgis-containers
 
