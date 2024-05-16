@@ -39,8 +39,8 @@
 **Owners:**
 
 - Gabriele Bartolini (@gbartolini, Maintainer)
-- Jaime Silvela (@jsilvela)
 - Jonathan Battiato (@jbattiato)
+- Jaime Silvela (@jsilvela)
 
 ## cloudnative-pg
 
@@ -56,6 +56,15 @@ primarily the maintainers' responsibility to manage it.
 **Owners:**
 
 - Jaime Silvela (@jsilvela)
+
+### Operator Lifecycle Manager (OLM)
+
+**Folders:** [cloudnative-pg/config/olm-*/](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/config/)
+
+**Owners:**
+
+- Niccolò Fei (@NiccoloFei)
+- Jonathan Gonzalez (@sxd, Maintainer)
 
 ### Testing
 
