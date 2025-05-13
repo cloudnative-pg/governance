@@ -182,7 +182,7 @@ profiles:
   #
   governance:
     duration: 4w
-    pass_threshold: 75
+    pass_threshold: 66
     close_on_passing: true
     announcements:
       discussions:
