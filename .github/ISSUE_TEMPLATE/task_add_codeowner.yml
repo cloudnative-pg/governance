@@ -17,4 +17,5 @@ body:
             - [ ] Add the new code owner to the organization
             - [ ] Add the new code owner to the proper team(s)
             - [ ] Add the new code owner to the CODEOWNERS file in the <repository>
+            - [ ] Add the new code owner to https://github.com/cloudnative-pg/governance/blob/main/COMPONENT-OWNERS.md
             - [ ] Announce thew new code owner in the mailing list
