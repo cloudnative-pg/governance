@@ -41,6 +41,7 @@
 - Gabriele Bartolini (@gbartolini, Maintainer)
 - Jonathan Battiato (@jbattiato)
 - Jaime Silvela (@jsilvela)
+- Floor Drees (@FloorD)
 
 ## cloudnative-pg
 
