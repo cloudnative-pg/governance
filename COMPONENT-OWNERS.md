@@ -2,7 +2,7 @@
 
 ## artifacts
 
-**Repository:** [cloudnative-pg/ciclops](https://github.com/cloudnative-pg/artifacts)
+**Repository:** [cloudnative-pg/artifacts](https://github.com/cloudnative-pg/artifacts)
 
 **Owners:**
 
