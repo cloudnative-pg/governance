@@ -1,5 +1,13 @@
 # CloudNativePG Component Owners
 
+## artifacts
+
+**Repository:** [cloudnative-pg/ciclops](https://github.com/cloudnative-pg/artifacts)
+
+**Owners:**
+
+- Niccolò Fei (@NiccoloFei)
+
 ## charts
 
 **Repository:** [cloudnative-pg/charts](https://github.com/cloudnative-pg/charts)
