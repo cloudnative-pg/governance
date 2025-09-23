@@ -121,7 +121,7 @@ privileges for any CloudNativePG GitHub repositories."
 ## Meetings
 
 Time zones permitting, Maintainers are expected to participate in the public
-developers meeting (see ["Meetings" in the contributing guidelines](CONTRIBUTING.md#meetings)
+developers meeting (see ["CloudNativePG Community Meetings" in the organization page](https://github.com/cloudnative-pg#cloudnativepg-community-meetings)
 page for details).
 
 Maintainers will also have closed meetings to discuss security reports
@@ -139,7 +139,7 @@ non-Maintainer community members.
 
 ## Code of Conduct
 
-[Code of Conduct](./code-of-conduct.md)
+[Code of Conduct](CODE_OF_CONDUCT.md)
 violations by community members will be discussed and resolved
 on the [private Maintainer mailing list](mailto:conduct@cloudnative-pg.io).
 If the reported CoC violator is a Maintainer, the Maintainers will instead
