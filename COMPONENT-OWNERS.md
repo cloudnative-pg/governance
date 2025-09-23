@@ -8,6 +8,14 @@
 
 - Niccolò Fei (@NiccoloFei)
 
+## Chaos Testing
+
+**Repository:** [cloudnative-pg/chaos-testing](https://github.com/cloudnative-pg/chaos-testing)
+
+**Owners:**
+
+- Yash Agarwal (@XploY04)
+
 ## charts
 
 **Repository:** [cloudnative-pg/charts](https://github.com/cloudnative-pg/charts)
