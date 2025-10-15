@@ -145,6 +145,14 @@ primarily the maintainers' responsibility to manage it.
 - Niccolò Fei (@NiccoloFei)
 - Jonathan Gonzalez (@sxd, Maintainer)
 
+## postgres-extensions-containers
+
+**Repository:** [cloudnative-pg/postgres-extensions-containers](https://github.com/cloudnative-pg/postgres-extensions-containers)
+
+**Owners:**
+
+- Niccolò Fei (@NiccoloFei)
+
 ## postgres-trunk-containers
 
 **Repository:** [cloudnative-pg/postgres-trunk-containers](https://github.com/cloudnative-pg/postgres-trunk-containers)
