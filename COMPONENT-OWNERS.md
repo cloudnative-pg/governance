@@ -99,6 +99,14 @@ primarily the maintainers' responsibility to manage it.
 - Tao Li (@litaocdl)
 - Jaime Silvela (@jsilvela)
 
+## docs
+
+**Repository:** [cloudnative-pg/docs](https://github.com/cloudnative-pg/docs)
+
+**Owners:**
+
+- Anushka Saxena (@SaxenaAnushka102)
+
 ## grafana-dashboards
 
 **Repository:** [cloudnative-pg/grafana-dashboards](https://github.com/cloudnative-pg/grafana-dashboards)
@@ -152,6 +160,14 @@ primarily the maintainers' responsibility to manage it.
 **Owners:**
 
 - Niccolò Fei (@NiccoloFei)
+
+## postgres-keycloak-oauth-validator
+
+**Repository:** [cloudnative-pg/postgres-keycloak-oauth-validator](https://github.com/cloudnative-pg/postgres-keycloak-oauth-validator)
+
+**Owners:**
+
+- Yoshiyuki Tabata (@y-tabata)
 
 ## postgres-trunk-containers
 
