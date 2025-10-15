@@ -153,6 +153,14 @@ primarily the maintainers' responsibility to manage it.
 - Niccolò Fei (@NiccoloFei)
 - Jonathan Gonzalez (@sxd, Maintainer)
 
+## postgres-extensions-containers
+
+**Repository:** [cloudnative-pg/postgres-extensions-containers](https://github.com/cloudnative-pg/postgres-extensions-containers)
+
+**Owners:**
+
+- Niccolò Fei (@NiccoloFei)
+
 ## postgres-keycloak-oauth-validator
 
 **Repository:** [cloudnative-pg/postgres-keycloak-oauth-validator](https://github.com/cloudnative-pg/postgres-keycloak-oauth-validator)
