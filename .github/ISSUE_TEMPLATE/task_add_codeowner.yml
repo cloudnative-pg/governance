@@ -1,0 +1,21 @@
+name: "CodeOwner Onboarding"
+description: "Add a code owner to a repository"
+title: "[CodeOwner Onboarding]: Adding <name> as code owner"
+labels: ["onboarding", "codeowner"]
+projects: ["cloudnative-pg/governance"]
+assignees:
+  - gbartolini
+  - sxd
+body:
+    - type: markdown
+      attributes:
+        value: |
+            ## Code Owner Onboarding
+            This issue is to track the onboarding of a new code owner for the repository <repository>.
+            Please follow the next set of tasks:
+            - [ ] Close the ticket with the vote and open this one as a follow up
+            - [ ] Add the new code owner to the organization
+            - [ ] Add the new code owner to the proper team(s)
+            - [ ] Make sure the new code owner exists on the CODEOWNERS file if the team is not in the <repository>
+            - [ ] Add the new code owner to https://github.com/cloudnative-pg/governance/blob/main/COMPONENT-OWNERS.md
+            - [ ] Announce thew new code owner in the mailing list
