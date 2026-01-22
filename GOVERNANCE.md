@@ -104,6 +104,8 @@ a separate GitHub repository within the CloudNativePG organization (e.g.,
 The owners of these components are delineated in the
 [`COMPONENT-OWNERS.md`](COMPONENT-OWNERS.md) file within this repository, which also
 specifies the component for which each individual is responsible.
+Component owners are implicitly considered Contributors and are included in the
+`CONTRIBUTORS.md` file.
 
 #### Changes in component ownership
 
@@ -125,8 +127,9 @@ privileges for any CloudNativePG GitHub repositories.
 ### Contributors
 
 Contributors are members of the community who contribute directly to the project
-and add value to it. Contributions are not limited to code, but also include
-documentation and community work.
+and add value to it. This role represents the first formal tier of the
+CloudNativePG contributor ladder. Contributions are not limited to code, but
+also include documentation and community work.
 
 Responsibilities of a contributor include following the CloudNativePG Code of
 Conduct and the project contributing guide. Requirements for this role include
@@ -135,7 +138,8 @@ requests, contributing to documentation, participating in meetings, helping
 community members, providing feedback on issues/PRs, testing releases, or
 promoting the project in public.
 
-The contributors are identified in the [`CONTRIBUTORS.md`](CONTRIBUTORS.md) file.
+The contributors are identified in the [`CONTRIBUTORS.md`](CONTRIBUTORS.md)
+file, which also includes all individuals holding the Component Owner role.
 
 #### Changes in contributor status
 
