@@ -58,6 +58,9 @@ CloudNativePG and its leadership embrace the following values:
 
 ## Project Roles
 
+The project recognizes different levels of responsibility within the community,
+forming a contributor ladder that rewards participation and commitment.
+
 ### Maintainers
 
 Maintainers hold a crucial role in the comprehensive development of the entire
@@ -79,8 +82,9 @@ The maintainers are identified in the [`MAINTAINERS.md`](MAINTAINERS.md) file.
 New maintainers are proposed by an existing maintainer and are elected by a ⅔
 majority maintainers vote. Maintainers can be removed by a ⅔ majority
 maintainers vote, leading to their transition to emeritus status.
+Votes are conducted as defined in the [Voting](#voting) section.
 
-#### Github Project Administration
+#### GitHub Project Administration
 
 Members designated as Maintainers will be included in the `maintainers` team,
 where they will possess the `Maintain` role for every CloudNativePG repository.
@@ -107,7 +111,7 @@ New component owners can be proposed by any maintainer and are elected by a ⅔
 majority maintainers vote. Component owners can be removed by a ⅔ majority
 maintainers vote.
 
-#### Github Project Administration
+#### GitHub Project Administration
 
 Owners of components with dedicated GitHub repositories will be granted `Write`
 access to their respective repositories, enabling them to merge approved pull
@@ -116,7 +120,7 @@ repository's `CODEOWNERS` file, ensuring clear attribution and accountability
 for code contributions.
 
 It's important to note that these owners will not receive `Maintain` or `Admin`
-privileges for any CloudNativePG GitHub repositories."
+privileges for any CloudNativePG GitHub repositories.
 
 ### Contributors
 
@@ -129,7 +133,7 @@ Conduct and the project contributing guide. Requirements for this role include
 one or more of the following: reporting or resolving issues, submitting pull
 requests, contributing to documentation, participating in meetings, helping
 community members, providing feedback on issues/PRs, testing releases, or
-promoting the project.
+promoting the project in public.
 
 The contributors are identified in the [`CONTRIBUTORS.md`](CONTRIBUTORS.md) file.
 
@@ -139,7 +143,7 @@ New contributors are proposed by an existing maintainer and are elected by a
 simple majority maintainers vote. Contributors can be removed by a simple
 majority maintainers vote.
 
-#### Github Project Administration
+#### GitHub Project Administration
 
 The contributor level does not imply that the individual will be added to the
 GitHub organization or any specific project teams as a collaborator or member.
@@ -158,7 +162,7 @@ must be invited to such closed meetings, except for any Maintainer accused of a 
 ## CNCF Resources
 
 Any Maintainer may suggest a request for CNCF resources by creating a new
-[Github discussion under the "Maintainers room" category](https://github.com/cloudnative-pg/cloudnative-pg/discussions/categories/maintainers-room),
+[GitHub discussion under the "Maintainers room" category](https://github.com/cloudnative-pg/cloudnative-pg/discussions/categories/maintainers-room),
 or during a meeting.  A simple majority of Maintainers approves the request.
 The Maintainers may also choose to delegate working with the CNCF to
 non-Maintainer community members.
@@ -182,7 +186,7 @@ voting within GitHub issues or discussions.
 - **Simple majority:** Most votes require a simple majority of all Maintainers
     to succeed. A vote can be requested by a Maintainer using the `/vote`
     command.
-- **Governance changes:** Changes to this Governance require a 2/3 vote of
+- **Governance changes:** Changes to this Governance require a ⅔ vote of
     all Maintainers. This can be requested using the `/vote-governance` command.
 
 Votes can also be taken on [the private Maintainer mailing list](mailto:security@cloudnative-pg.io)
