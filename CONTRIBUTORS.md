@@ -1,10 +1,11 @@
 # CloudNativePG Contributors
 
 This document identifies the individuals who have been formally recognized as
-**Contributors** to the CloudNativePG project, as defined in
-[GOVERNANCE.md](GOVERNANCE.md).
+**Contributors** or **Component Owners** to the CloudNativePG project, as
+defined in [GOVERNANCE.md](GOVERNANCE.md). 
 
-Contributors are listed in alphabetical order by last name.
+Contributors and Component Owners are listed in alphabetical order by last
+name. 
 The project is grateful for their ongoing dedication to the community,
 documentation, and technical excellence.
 
