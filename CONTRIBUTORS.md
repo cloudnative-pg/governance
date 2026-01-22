@@ -9,10 +9,17 @@ name.
 The project is grateful for their ongoing dedication to the community,
 documentation, and technical excellence.
 
-| Name | GitHub Handle | Email | Country |
-| :--- | :--- | :--- | :--- |
-| First Last | [@username](https://github.com/username) | name@example.com | Country |
-| | | | |
+| Name | GitHub Handle | Country |
+| :--- | :--- | :--- |
+| Yash Agarwal | [@XploY04](https://github.com/XploY04) | India |
+| Jonathan Battiato | [@jbattiato](https://github.com/jbattiato) | Italy |
+| Floor Drees | [@FloorD](https://github.com/FloorD) | Netherlands |
+| Niccolò Fei | [@NiccoloFei](https://github.com/NiccoloFei) | Italy |
+| Itay Grudev | [@itay-grudev](https://github.com/itay-grudev) | Bulgaria |
+| Tao Li | [@litaocdl](https://github.com/litaocdl) | China |
+| Anushka Saxena | [@SaxenaAnushka102](https://github.com/SaxenaAnushka102) | India |
+| Jaime Silvela | [@jsilvela](https://github.com/jsilvela) | Spain |
+| Yoshiyuki Tabata | [@y-tabata](https://github.com/y-tabata) | Japan |
 
 ---
 
