@@ -1,5 +1,12 @@
 # CloudNativePG Component Owners
 
+This document identifies the individuals responsible for specific components
+and subprojects within CloudNativePG.
+
+As defined in [GOVERNANCE.md](GOVERNANCE.md), Component Owners are implicitly
+considered Contributors and are included in the
+[CONTRIBUTORS.md](CONTRIBUTORS.md) file.
+
 ## artifacts
 
 **Repository:** [cloudnative-pg/artifacts](https://github.com/cloudnative-pg/artifacts)
@@ -61,7 +68,7 @@
 
 ## cloudnative-pg
 
-*Note:* this is the main project of the CloudNativePG organisation and it is
+*Note:* this is the main project of the CloudNativePG organization and it is
 primarily the maintainers' responsibility to manage it.
 
 **Repository:** [cloudnative-pg/cloudnative-pg](https://github.com/cloudnative-pg/cloudnative-pg)
