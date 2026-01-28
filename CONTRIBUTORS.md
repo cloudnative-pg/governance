@@ -17,6 +17,7 @@ documentation, and technical excellence.
 | Niccolò Fei | [@NiccoloFei](https://github.com/NiccoloFei) | Italy |
 | Itay Grudev | [@itay-grudev](https://github.com/itay-grudev) | Bulgaria |
 | Tao Li | [@litaocdl](https://github.com/litaocdl) | China |
+| Gabriele Quaresima | [@gabriele-wolfox](https://github.com/gabriele-wolfox) | Italy |
 | Anushka Saxena | [@SaxenaAnushka102](https://github.com/SaxenaAnushka102) | India |
 | Jaime Silvela | [@jsilvela](https://github.com/jsilvela) | Spain |
 | Yoshiyuki Tabata | [@y-tabata](https://github.com/y-tabata) | Japan |
