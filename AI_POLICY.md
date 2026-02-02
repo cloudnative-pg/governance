@@ -79,8 +79,24 @@ of the PR and potentially a block from the organization:
 ## 5. Disclosure
 
 If AI was used to generate a significant portion of your contribution (beyond
-simple autocomplete), we ask that you **disclose it** in the PR description.
-Transparency helps maintainers calibrate their review focus.
+simple autocomplete), we ask that you **disclose it** in the PR description and
+through an `Assisted-by:` commit message trailer, as adopted by the
+[OpenTelemetry project](https://github.com/open-telemetry/opentelemetry-collector/blob/main/AGENTS.md).
+
+Transparency helps maintainers calibrate their review focus. Please add the
+trailer to your commit message using the following format:
+
+```
+Assisted-by: Name of AI
+```
+
+Examples:
+
+```
+Assisted-by: ChatGPT 5.2
+Assisted-by: Claude Opus 4.5
+Assisted-by: Google Gemini
+```
 
 ## 6. Enforcement
 
