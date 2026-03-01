@@ -75,7 +75,7 @@ primarily the maintainers' responsibility to manage it.
 
 ### Documentation
 
-**Folder:** [cloudnative-pg/docs](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/docs)
+**Folder:** [cloudnative-pg/docs](https://github.com/cloudnative-pg/cloudnative-pg/tree/main/docs)
 
 **Owners:**
 
@@ -83,7 +83,7 @@ primarily the maintainers' responsibility to manage it.
 
 ### Operator Lifecycle Manager (OLM)
 
-**Folders:** [cloudnative-pg/config/olm-*/](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/config/)
+**Folders:** [cloudnative-pg/config/olm-*/](https://github.com/cloudnative-pg/cloudnative-pg/tree/main/config)
 
 **Owners:**
 
@@ -94,9 +94,9 @@ primarily the maintainers' responsibility to manage it.
 
 **Folders:**
 
-- [cloudnative-pg/.github](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/.github)
-- [cloudnative-pg/hack](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/hack)
-- [cloudnative-pg/tests](https://github.com/cloudnative-pg/charts/tree/main/cloudnative-pg/cloudnative-pg/tests)
+- [cloudnative-pg/.github](https://github.com/cloudnative-pg/cloudnative-pg/tree/main/.github)
+- [cloudnative-pg/hack](https://github.com/cloudnative-pg/cloudnative-pg/tree/main/hack)
+- [cloudnative-pg/tests](https://github.com/cloudnative-pg/cloudnative-pg/tree/main/tests)
 
 *Note:* access to additional files might be required.
 
