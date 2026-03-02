@@ -1,4 +1,4 @@
-ieader:
+header:
   schema-version: 2.2.0
   last-updated: '2026-03-02'
   last-reviewed: '2026-03-02'
@@ -102,7 +102,7 @@ repository:
   status: active
   accepts-change-request: true
   accepts-automated-change-request: false
-  no-third-party-packages: false
+  no-third-party-packages: true
   core-team:
     - name: Gabriele Bartolini
       email: gabriele.bartolini@enterprisedb.com
@@ -127,6 +127,10 @@ repository:
   documentation:
     contributing-guide: https://github.com/cloudnative-pg/governance/blob/main/CONTRIBUTING.md
     governance: https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md
+  security:
+    assessments:
+      self:
+        comment: Self assessment has not yet been completed.
   license:
     url: https://www.apache.org/licenses/LICENSE-2.0
     expression: Apache-2.0
