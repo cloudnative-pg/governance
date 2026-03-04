@@ -133,15 +133,6 @@ primarily the maintainers' responsibility to manage it.
 - Niccolò Fei (@NiccoloFei)
 - Jonathan Gonzalez (@sxd, Maintainer)
 
-## pgcrash-containers
-
-**Repository:** [cloudnative-pg/pgcrash-containers](https://github.com/cloudnative-pg/pgcrash-containers)
-
-**Owners:**
-
-- Niccolò Fei (@NiccoloFei)
-- Jonathan Gonzalez (@sxd, Maintainer)
-
 ## postgis-containers
 
 **Repository:** [cloudnative-pg/postgis-containers](https://github.com/cloudnative-pg/postgis-containers)

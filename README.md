@@ -39,7 +39,6 @@ Standardized images built for security, minimal footprint, and CNPG compatibilit
 | [pgbouncer-containers](https://github.com/cloudnative-pg/pgbouncer-containers) | Optimized images for PgBouncer connection pooling. |
 | [postgis-containers](https://github.com/cloudnative-pg/postgis-containers) | PostgreSQL images bundled with PostGIS extensions. |
 | [postgres-trunk-containers](https://github.com/cloudnative-pg/postgres-trunk-containers) | Images built from PostgreSQL `main` branch for early testing. |
-| [pgcrash-containers](https://github.com/cloudnative-pg/pgcrash-containers) | Container images for `pg_crash` to test PostgreSQL resilience. |
 
 ### Community, Docs & Monitoring
 
