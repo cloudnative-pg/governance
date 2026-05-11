@@ -9,4 +9,10 @@ order):
 - Jonathan Gonzalez (EDB)
 - Marco Nenciarini (EDB)
 - Armando Ruocco (EDB)
+
+## Emeritus Maintainers
+
+The following individuals have previously served as maintainers and are
+recognised for their valuable contributions to the project:
+
 - Philippe Scorsolini (Upbound)
