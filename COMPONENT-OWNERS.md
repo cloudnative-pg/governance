@@ -88,7 +88,6 @@ primarily the maintainers' responsibility to manage it.
 **Owners:**
 
 - Niccolò Fei (@NiccoloFei)
-- Jonathan Gonzalez (@sxd, Maintainer)
 
 ### Testing
 
@@ -131,7 +130,6 @@ primarily the maintainers' responsibility to manage it.
 **Owners:**
 
 - Niccolò Fei (@NiccoloFei)
-- Jonathan Gonzalez (@sxd, Maintainer)
 
 ## postgis-containers
 
@@ -140,7 +138,6 @@ primarily the maintainers' responsibility to manage it.
 **Owners:**
 
 - Niccolò Fei (@NiccoloFei)
-- Jonathan Gonzalez (@sxd, Maintainer)
 
 ## postgres-containers
 
@@ -149,7 +146,6 @@ primarily the maintainers' responsibility to manage it.
 **Owners:**
 
 - Niccolò Fei (@NiccoloFei)
-- Jonathan Gonzalez (@sxd, Maintainer)
 
 ## postgres-extensions-containers
 
@@ -175,4 +171,3 @@ primarily the maintainers' responsibility to manage it.
 
 - Gabriele Bartolini (@gbartolini, Maintainer)
 - Niccolò Fei (@NiccoloFei)
-- Jonathan Gonzalez (@sxd, Maintainer)
