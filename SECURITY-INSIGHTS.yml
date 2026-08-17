@@ -61,6 +61,9 @@ project:
       comment: |
         Maintenance scripts for generating immutable application containers for
         all supported PostgreSQL major versions
+    - name: PgBouncer Container Images
+      url: https://github.com/cloudnative-pg/pgbouncer-containers
+      comment: Optimized container images for PgBouncer connection pooling
     - name: PostgreSQL Extensions Container Images
       url: https://github.com/cloudnative-pg/postgres-extensions-containers
       comment: |
