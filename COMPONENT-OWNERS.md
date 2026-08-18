@@ -36,7 +36,6 @@ considered Contributors and are included in the
 - Niccolò Fei (@NiccoloFei)
 - Itay Grudev (@itay-grudev)
 - Philippe Scorsolini (@phisco, Maintainer)
-- Jaime Silvela (@jsilvela)
 
 ### PostgreSQL Cluster Chart
 
@@ -63,7 +62,6 @@ considered Contributors and are included in the
 
 - Gabriele Bartolini (@gbartolini, Maintainer)
 - Jonathan Battiato (@jbattiato)
-- Jaime Silvela (@jsilvela)
 - Floor Drees (@FloorD)
 
 ## cloudnative-pg
@@ -78,8 +76,6 @@ primarily the maintainers' responsibility to manage it.
 **Folder:** [cloudnative-pg/docs](https://github.com/cloudnative-pg/cloudnative-pg/tree/main/docs)
 
 **Owners:**
-
-- Jaime Silvela (@jsilvela)
 
 ### Operator Lifecycle Manager (OLM)
 
@@ -103,7 +99,6 @@ primarily the maintainers' responsibility to manage it.
 
 - Niccolò Fei (@NiccoloFei)
 - Tao Li (@litaocdl)
-- Jaime Silvela (@jsilvela)
 
 ## docs
 
@@ -121,7 +116,6 @@ primarily the maintainers' responsibility to manage it.
 
 - Itay Grudev (@itay-grudev)
 - Philippe Scorsolini (@phisco, Maintainer)
-- Jaime Silvela (@jsilvela)
 
 ## pgbouncer-containers
 
