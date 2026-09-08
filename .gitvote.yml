@@ -92,7 +92,7 @@ profiles:
     #
     allowed_voters:
       teams:
-        - maintainers
+        - steering-committee
       users: []
 
     # Periodic status check
@@ -189,4 +189,4 @@ profiles:
         category: announcements
     allowed_voters:
       teams:
-        - maintainers
+        - steering-committee
