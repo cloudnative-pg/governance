@@ -1,0 +1,119 @@
+name: "New Component Proposal"
+description: "Propose that a new repository join CloudNativePG as a component"
+title: "[New Component]: <repository name>"
+labels: ["component-proposal"]
+projects: ["cloudnative-pg/governance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        See [GOVERNANCE.md's Proposing a New Component section](https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md#proposing-a-new-component)
+        for the full process. This proposal will be presented at the first
+        available community meeting for open discussion, then decided by
+        simple-majority, per-person vote of the target subproject's
+        maintainer committee, run on this issue with that subproject's
+        own profile in `.gitvote.yml`:
+
+        - Core: `/vote-core`
+        - Supply Chain: `/vote-supply-chain`
+        - Community, Docs & Ecosystem: `/vote-community-ecosystem`
+        - Extensibility: `/vote-extensibility`
+
+        If you select "None of these" below, the proposal fits no
+        existing subproject and is escalated to the Steering Committee as
+        a request to add a new one instead: proposed by a Steering
+        Committee member, ⅔ majority, per person, run with
+        `/vote-governance`. See
+        [GOVERNANCE.md's Adding New Subprojects section](https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md#adding-new-subprojects).
+  - type: input
+    id: repo-name
+    attributes:
+      label: Proposed repository name
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What does this repository do, and why should it join CloudNativePG?
+    validations:
+      required: true
+  - type: dropdown
+    id: subproject
+    attributes:
+      label: Subproject
+      description: >
+        Which existing subproject does this belong to? See the
+        subprojects/ folder. If none fit, explain why a new subproject is
+        needed instead in the field below.
+      options:
+        - Core
+        - Supply Chain
+        - Community, Docs & Ecosystem
+        - Extensibility
+        - None of these (new subproject needed)
+    validations:
+      required: true
+  - type: textarea
+    id: new-subproject-case
+    attributes:
+      label: Case for a new subproject (if applicable)
+      description: >
+        Only needed if you selected "None of these" above. See
+        GOVERNANCE.md's Adding New Subprojects section for what's expected.
+  - type: textarea
+    id: activity
+    attributes:
+      label: Active development and user base
+      description: >
+        If this repository already exists, describe its current
+        development activity and real-world usage. Not applicable to a
+        brand-new, from-scratch repository.
+  - type: textarea
+    id: quality
+    attributes:
+      label: Code and design quality
+      description: How does it compare to the rest of CloudNativePG?
+    validations:
+      required: true
+  - type: checkboxes
+    id: consensus
+    attributes:
+      label: Internal consensus
+      options:
+        - label: >
+            This repository already has its own contributor base (e.g.
+            an existing external project), and they've held an internal
+            consensus vote to join CloudNativePG before this proposal was
+            opened.
+  - type: input
+    id: owners
+    attributes:
+      label: Initial Component Owner(s)
+      description: GitHub handles of who will own this component
+    validations:
+      required: true
+  - type: textarea
+    id: commitment
+    attributes:
+      label: Long-term commitment
+      description: >
+        Describe the proposer's, or proposed owners', long-term commitment
+        to maintaining this component.
+    validations:
+      required: true
+  - type: textarea
+    id: license-ip
+    attributes:
+      label: License adoption and IP transfer
+      description: >
+        Confirm that whoever holds rights to this repository's code is in
+        a position to license it under CloudNativePG's Apache License 2.0
+        and assign the relevant IP to the CloudNativePG organization
+        under the CNCF, either because all contributors agree, or
+        because a proper DCO process governs the contribution. If
+        there's a gap (e.g. an incompatible license, or prior
+        contributors who can't be reached for agreement), describe the
+        concrete plan for resolving it before this is accepted.
+    validations:
+      required: true

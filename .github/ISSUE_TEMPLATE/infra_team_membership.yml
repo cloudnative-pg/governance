@@ -1,0 +1,37 @@
+name: "Infrastructure Team: Membership Change"
+description: "Propose adding or removing an Infrastructure Team (admins) member"
+title: "[Infra Team]: <add|remove> <name>"
+labels: ["infra-team-membership"]
+projects: ["cloudnative-pg/governance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        See [GOVERNANCE.md's Infrastructure Administration
+        section](https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md#infrastructure-administration)
+        for the full process. Once this issue has the details below, run
+        the vote using `.gitvote.yml`'s `default` profile, `/vote` (lazy
+        consensus, falling back to simple majority, per person, of the
+        Steering Committee).
+  - type: dropdown
+    id: change
+    attributes:
+      label: Change
+      options:
+        - Add
+        - Remove
+    validations:
+      required: true
+  - type: input
+    id: member
+    attributes:
+      label: Member
+      description: GitHub handle
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+    validations:
+      required: true
