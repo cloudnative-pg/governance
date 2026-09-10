@@ -25,10 +25,25 @@
 #         - "*.txt"
 #       profile: default
 #
+# Amending GOVERNANCE.md or CONTRIBUTOR_LADDER.md is a ⅔ Steering
+# Committee decision (see GOVERNANCE.md's Amendments and Voting
+# sections). Both are amended by pull request, so the vote runs on the
+# PR itself and is opened automatically here: the diff is the proposal,
+# and a governance change can't be merged without a vote having been
+# called on it. Every other decision in GOVERNANCE.md is raised as an
+# issue instead, from one of the templates in .github/ISSUE_TEMPLATE,
+# and the vote is called there by hand.
+#
+# Deliberately not listed below: MAINTAINERS.md (a roster change records
+# a decision already taken by the relevant committee, at that
+# committee's own threshold) and subprojects/*.md (routine editorial
+# changes, explicitly no governance vote).
 automation:
-  enabled: false
+  enabled: true
   rules:
-    - patterns: []
+    - patterns:
+        - "GOVERNANCE.md"
+        - "CONTRIBUTOR_LADDER.md"
       profile: governance
 
 # Configuration profiles (required)
@@ -53,7 +68,7 @@ profiles:
     #   days    | day    | d
     #   weeks   | week   | w
     #
-    duration: 4w
+    duration: 2w
 
     # Pass threshold (required)
     #
@@ -181,7 +196,98 @@ profiles:
   # default values when they are not provided on other profiles.
   #
   governance:
-    duration: 4w
+    duration: 2w
+    pass_threshold: 66
+    close_on_passing: true
+    # Held open for a week even once it would pass, so the amendment is
+    # actually circulated for comment before it's adopted (see
+    # GOVERNANCE.md's Amendments section).
+    close_on_passing_min_wait: "1 week"
+    announcements:
+      discussions:
+        category: announcements
+    allowed_voters:
+      teams:
+        - steering-committee
+
+  # Note: Steering's plain-majority business (the subproject-committee
+  # removal backstop, and everything else Steering owns by lazy
+  # consensus falling back to simple majority, see GOVERNANCE.md's
+  # Voting section) doesn't need its own profile; the `default` profile
+  # above already has pass_threshold: 50 and allowed_voters.teams:
+  # [steering-committee], invoked with plain `/vote`.
+  #
+  # The `governance` profile above is the ⅔ bar. It covers amending
+  # GOVERNANCE.md or CONTRIBUTOR_LADDER.md (opened automatically, see
+  # the automation block at the top of this file) and adding or removing
+  # a subproject, which carries the same bar because each subproject is
+  # expected to hold a seat on the Steering Committee once the
+  # seat-selection mechanism is ratified: it changes Steering's own
+  # future composition, not just the repository listing. A MAINTAINERS.md
+  # roster change is not on this list; it records a decision already
+  # taken at that committee's own threshold.
+
+  # Per-subproject profiles
+  #
+  # Simple majority, per person, of that subproject's own maintainer
+  # committee team. Covers both a new-component proposal (see GOVERNANCE.md's
+  # Proposing a New Component section) and adding a subproject maintainer
+  # committee member (see GOVERNANCE.md's Changes in subproject maintainer
+  # committee membership section); both use this same rule.
+  core:
+    duration: 2w
+    pass_threshold: 50
+    close_on_passing: true
+    announcements:
+      discussions:
+        category: announcements
+    allowed_voters:
+      teams:
+        - core-maintainers
+
+  supply-chain:
+    duration: 2w
+    pass_threshold: 50
+    close_on_passing: true
+    announcements:
+      discussions:
+        category: announcements
+    allowed_voters:
+      teams:
+        - supply-chain-maintainers
+
+  community-ecosystem:
+    duration: 2w
+    pass_threshold: 50
+    close_on_passing: true
+    announcements:
+      discussions:
+        category: announcements
+    allowed_voters:
+      teams:
+        - community-ecosystem-maintainers
+
+  extensibility:
+    duration: 2w
+    pass_threshold: 50
+    close_on_passing: true
+    announcements:
+      discussions:
+        category: announcements
+    allowed_voters:
+      teams:
+        - extensibility-maintainers
+
+  # Per-subproject removal profiles
+  #
+  # ⅔ majority, per person, of that subproject's own maintainer committee
+  # team (see GOVERNANCE.md's Changes in subproject maintainer committee
+  # membership section). GitVote has no way to exclude one specific team
+  # member from the electorate, so the member under review is asked to
+  # abstain rather than being mechanically excluded from the tally; see
+  # that section for the full removal process.
+  core-removal:
+    duration: 2w
     pass_threshold: 66
     close_on_passing: true
     announcements:
@@ -189,4 +295,37 @@ profiles:
         category: announcements
     allowed_voters:
       teams:
-        - steering-committee
+        - core-maintainers
+
+  supply-chain-removal:
+    duration: 2w
+    pass_threshold: 66
+    close_on_passing: true
+    announcements:
+      discussions:
+        category: announcements
+    allowed_voters:
+      teams:
+        - supply-chain-maintainers
+
+  community-ecosystem-removal:
+    duration: 2w
+    pass_threshold: 66
+    close_on_passing: true
+    announcements:
+      discussions:
+        category: announcements
+    allowed_voters:
+      teams:
+        - community-ecosystem-maintainers
+
+  extensibility-removal:
+    duration: 2w
+    pass_threshold: 66
+    close_on_passing: true
+    announcements:
+      discussions:
+        category: announcements
+    allowed_voters:
+      teams:
+        - extensibility-maintainers

@@ -1,1 +1,31 @@
-* @cloudnative-pg/governance-owners @cloudnative-pg/admins
+# CloudNativePG governance repository CODEOWNERS.
+#
+# See GOVERNANCE.md and subprojects/README.md for what these teams are and
+# how they roll out. Team slugs referenced here without full repo access
+# yet fall back to @cloudnative-pg/governance-owners, this repo's own
+# owners team, the same transitional rule described in
+# subprojects/README.md's GitHub Teams table.
+
+# Default owners for everything not matched more specifically below.
+* @cloudnative-pg/governance-owners
+
+# GOVERNANCE.md, MAINTAINERS.md, and CONTRIBUTOR_LADDER.md are Steering
+# Committee-owned documents (see GOVERNANCE.md's Voting section);
+# ownership here is expressed through governance-owners, this repo's own
+# owners team, same as the default rule above.
+/GOVERNANCE.md @cloudnative-pg/governance-owners
+/MAINTAINERS.md @cloudnative-pg/governance-owners
+/CONTRIBUTOR_LADDER.md @cloudnative-pg/governance-owners
+
+# Each subproject's own component listing is scoped to that subproject's
+# maintainer committee team. All four teams exist and match MAINTAINERS.md,
+# and all four hold write here (cnpg-infra's repo-policy.yaml), without
+# which GitHub would ignore these lines entirely. `governance-owners` is
+# listed alongside each while every committee still holds the same five
+# people. The subprojects index itself stays on the `governance-owners`
+# rule alone, since it isn't owned by any single subproject.
+/subprojects/README.md @cloudnative-pg/governance-owners
+/subprojects/core.md @cloudnative-pg/core-maintainers @cloudnative-pg/governance-owners
+/subprojects/supply-chain.md @cloudnative-pg/supply-chain-maintainers @cloudnative-pg/governance-owners
+/subprojects/community-ecosystem.md @cloudnative-pg/community-ecosystem-maintainers @cloudnative-pg/governance-owners
+/subprojects/extensibility.md @cloudnative-pg/extensibility-maintainers @cloudnative-pg/governance-owners

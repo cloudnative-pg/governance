@@ -1,0 +1,68 @@
+name: "Subproject Committee: Remove Member"
+description: "Propose removing a member from a subproject maintainer committee"
+title: "[Committee Remove]: <name> from <subproject>"
+labels: ["committee-membership"]
+projects: ["cloudnative-pg/governance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        See [GOVERNANCE.md's Changes in subproject maintainer committee
+        membership section](https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md#changes-in-subproject-maintainer-committee-membership)
+        for the full process. Once this issue has the details below, run
+        the removal vote for the target subproject using its own
+        `-removal` profile in `.gitvote.yml` (⅔ majority, per person, of
+        the committee, with the member under review abstaining):
+
+        - Core: `/vote-core-removal`
+        - Supply Chain: `/vote-supply-chain-removal`
+        - Community, Docs & Ecosystem: `/vote-community-ecosystem-removal`
+        - Extensibility: `/vote-extensibility-removal`
+
+        The member under review stays in the electorate GitVote counts
+        against, so ask them to abstain rather than vote on their own
+        removal: the ⅔ bar is measured against the whole committee
+        either way. If the committee can't reach ⅔ without them, or can't
+        convene the vote at all, any other committee member requests
+        Steering's backstop on this same issue; Steering then decides by
+        simple majority using `.gitvote.yml`'s `default` profile, `/vote`
+        (see the section linked above).
+  - type: dropdown
+    id: subproject
+    attributes:
+      label: Subproject
+      options:
+        - Core
+        - Supply Chain
+        - Community, Docs & Ecosystem
+        - Extensibility
+    validations:
+      required: true
+  - type: input
+    id: member
+    attributes:
+      label: Member proposed for removal
+      description: GitHub handle
+    validations:
+      required: true
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Reason
+      options:
+        - Inactivity
+        - Code of Conduct violation
+        - Out-of-remit / no longer meets requirements
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: >
+        Explain the reason above. For inactivity, see
+        CONTRIBUTOR_LADDER.md's Inactivity section (6 months with no
+        contribution or communication, not counting a communicated
+        absence).
+    validations:
+      required: true

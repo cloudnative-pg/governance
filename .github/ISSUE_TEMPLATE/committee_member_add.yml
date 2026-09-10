@@ -1,0 +1,52 @@
+name: "Subproject Committee: Add Member"
+description: "Propose adding a member to a subproject maintainer committee"
+title: "[Committee Add]: <name> to <subproject>"
+labels: ["committee-membership"]
+projects: ["cloudnative-pg/governance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        See [GOVERNANCE.md's Changes in subproject maintainer committee
+        membership section](https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md#changes-in-subproject-maintainer-committee-membership)
+        for the full process. Once this issue has the nominee's details
+        below, run the vote for the target subproject using its own
+        profile in `.gitvote.yml` (simple majority, per person):
+
+        - Core: `/vote-core`
+        - Supply Chain: `/vote-supply-chain`
+        - Community, Docs & Ecosystem: `/vote-community-ecosystem`
+        - Extensibility: `/vote-extensibility`
+
+        Committees are self-selecting: Steering does not vote on an
+        addition. Every subproject has a committee of at least three
+        members; if one has fallen below three, Steering is its caretaker
+        until it is back to three (see the section linked above).
+  - type: dropdown
+    id: subproject
+    attributes:
+      label: Subproject
+      options:
+        - Core
+        - Supply Chain
+        - Community, Docs & Ecosystem
+        - Extensibility
+    validations:
+      required: true
+  - type: input
+    id: nominee
+    attributes:
+      label: Nominee
+      description: GitHub handle of the person being proposed
+    validations:
+      required: true
+  - type: textarea
+    id: justification
+    attributes:
+      label: Justification
+      description: >
+        Which component(s) is the nominee an established Component Owner
+        of within this subproject? See CONTRIBUTOR_LADDER.md's Subproject
+        Maintainer section for eligibility.
+    validations:
+      required: true
