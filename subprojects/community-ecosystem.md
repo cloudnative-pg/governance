@@ -4,7 +4,7 @@ User-facing resources and ecosystem integration: the [cloudnative-pg.io](https:/
 website, documentation, brand assets, observability and UI integrations
 (Grafana, Headlamp), and other community-facing tooling. See the
 [subprojects index](README.md) for how this
-fits into the wider structure, and [GOVERNANCE.md](../GOVERNANCE.md#subprojects)
+fits into the wider structure, and [GOVERNANCE.md](../GOVERNANCE.md#individual-subproject-governance)
 for how subprojects are defined.
 
 > See [subprojects/README.md](README.md) for who owns these repositories

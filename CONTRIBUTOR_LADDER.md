@@ -199,7 +199,7 @@ for what that listing involves.
 Component Owners are tasked with the development of an entire component
 within CloudNativePG: a dedicated repository (e.g. `postgres-containers`),
 no more and no less (see [GOVERNANCE.md's Subprojects
-section](GOVERNANCE.md#subprojects) for the component definition). A
+section](GOVERNANCE.md#individual-subproject-governance) for the component definition). A
 Component Owner has full technical authority over "everything there": they
 don't need sign-off from a subproject committee for routine work in their
 own repository.
@@ -279,7 +279,7 @@ Subproject Maintainers are established contributors responsible for an
 entire subproject: technical direction, code review, merge, and release
 across every repository under it. "Maintainer" here means membership in one
 of the four subproject maintainer committees defined in
-[GOVERNANCE.md](GOVERNANCE.md#subprojects); it isn't scoped to a single flat
+[GOVERNANCE.md](GOVERNANCE.md#individual-subproject-governance); it isn't scoped to a single flat
 pool anymore. See
 [GOVERNANCE.md's Subproject Maintainer Committees section](GOVERNANCE.md#subproject-maintainer-committees)
 for the full responsibilities list, and [MAINTAINERS.md](MAINTAINERS.md) for

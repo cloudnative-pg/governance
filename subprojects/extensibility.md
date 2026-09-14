@@ -6,7 +6,7 @@ including the plugin-based backup and recovery ecosystem
 (`plugin-barman-cloud`, `klio`) and the libraries behind it, and Postgres
 tooling that has nothing to do with Kubernetes at all. See the
 [subprojects index](README.md) for how this fits into the wider structure,
-and [GOVERNANCE.md](../GOVERNANCE.md#subprojects) for how subprojects are
+and [GOVERNANCE.md](../GOVERNANCE.md#individual-subproject-governance) for how subprojects are
 defined.
 
 > See [subprojects/README.md](README.md) for who owns these repositories

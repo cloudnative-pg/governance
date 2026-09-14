@@ -32,7 +32,7 @@ given repository has one, `repo-tiers.yaml` is the record for it.
 The `governance`, `.project`, `.github`, `cnpg-infra`, and `cnpg-template`
 repositories are a special case: none is part of any subproject, and all
 five are administered directly by the Steering Committee (see
-[GOVERNANCE.md's Subprojects section](./GOVERNANCE.md#subprojects)),
+[GOVERNANCE.md's Subprojects section](./GOVERNANCE.md#individual-subproject-governance)),
 not by a subproject maintainer committee.
 
 | Repository | Description |
@@ -46,7 +46,7 @@ not by a subproject maintainer committee.
 ## Repositories
 
 CloudNativePG's repositories are grouped into four subprojects, defined in
-[GOVERNANCE.md's Subprojects section](./GOVERNANCE.md#subprojects). The full
+[GOVERNANCE.md's Subprojects section](./GOVERNANCE.md#individual-subproject-governance). The full
 repository listing, descriptions, and component ownership are kept in the
 [subprojects/](./subprojects/README.md) folder, one file per subproject, not
 duplicated here.

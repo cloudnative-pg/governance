@@ -124,7 +124,6 @@ flowchart TD
     class CPR,SUR,CDR,EXR,GREPO repo;
 ```
 
-<a id="subprojects"></a>
 ## Individual Subproject Governance
 
 CloudNativePG is organized into four subprojects, aligned directly with the
@@ -518,7 +517,7 @@ with no exception for a typo. That is deliberate, and it is the reason
 the repository listings live in
 [subprojects/](subprojects/README.md) instead, where reorganising a
 component grouping is routine editorial work needing no vote (see
-[Individual Subproject Governance](#subprojects)).
+[Individual Subproject Governance](#individual-subproject-governance)).
 
 ## Contributors, Reviewers and Component Owners
 

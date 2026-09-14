@@ -3,7 +3,7 @@
 Build, packaging, and testing infrastructure that supports the operator and
 its images without being the operator's reconciliation logic itself. See the
 [subprojects index](README.md) for how this fits into the wider structure,
-and [GOVERNANCE.md](../GOVERNANCE.md#subprojects) for how subprojects are
+and [GOVERNANCE.md](../GOVERNANCE.md#individual-subproject-governance) for how subprojects are
 defined.
 
 > See [subprojects/README.md](README.md) for who owns these repositories
@@ -58,7 +58,7 @@ being reused across several, so it sits with that plugin under
 > `cnpg-template` used to be listed here. It's now classified as
 > org-control infrastructure administered directly by the Steering
 > Committee instead, alongside `governance`, `.project`, `.github`, and
-> `cnpg-infra`. See [GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#subprojects)
+> `cnpg-infra`. See [GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#individual-subproject-governance)
 > and [subprojects/README.md](README.md).
 
 ## Testing & Automation

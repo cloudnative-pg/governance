@@ -7,9 +7,9 @@ module reasons (see [Supply Chain's "Libraries & Automation"](supply-chain.md#li
 for the distinction). Primarily the maintainers' responsibility;
 path-level review-routing within the `cloudnative-pg` component is tracked
 in [`cnpg-infra`'s `componentowners-policy.yaml`](https://github.com/cloudnative-pg/cnpg-infra/blob/main/componentowners-policy.yaml),
-not here (see [GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#subprojects)).
+not here (see [GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#individual-subproject-governance)).
 See the [subprojects index](README.md) for how this fits
-into the wider structure, and [GOVERNANCE.md](../GOVERNANCE.md#subprojects)
+into the wider structure, and [GOVERNANCE.md](../GOVERNANCE.md#individual-subproject-governance)
 for how subprojects are defined.
 
 > See [subprojects/README.md](README.md) for who owns these repositories

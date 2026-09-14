@@ -13,7 +13,7 @@ This is the index of CloudNativePG's four subprojects and their components.
 Each subproject has its own file, listing every repository that falls under
 it with a short description. Subprojects themselves, and the access/voting
 rights each role carries, are defined in
-[GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#subprojects), not
+[GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#individual-subproject-governance), not
 here. Who owns what is recorded in two places, neither of them this
 folder: [MAINTAINERS.md](../MAINTAINERS.md) lists each subproject's
 maintainer committee, and each component's own `COMPONENT_OWNERS.md`
@@ -54,11 +54,11 @@ other three, not a subproject deliverable. `cnpg-template` was previously
 listed under Supply Chain in [supply-chain.md](supply-chain.md); that was
 a discrepancy against `cnpg-infra`'s real, current classification, fixed
 here as a routine editorial move rather than something requiring a vote
-(see [GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#subprojects)).
+(see [GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#individual-subproject-governance)).
 
 Which changes to these files need a governance vote and which are routine
 editorial work is defined in
-[GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#subprojects), not
+[GOVERNANCE.md's Subprojects section](../GOVERNANCE.md#individual-subproject-governance), not
 restated here. Each `subprojects/*.md` file, other than this index, is scoped in
 `CODEOWNERS` to its own subproject's maintainer committee team (see
 [CODEOWNERS](../CODEOWNERS)), so that a subproject can eventually update

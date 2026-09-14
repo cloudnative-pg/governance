@@ -134,7 +134,7 @@ self-selection process in
 [GOVERNANCE.md's Voting section](GOVERNANCE.md#voting) and are recorded
 directly in the sections above; they do not require editing GOVERNANCE.md
 itself. The org-control repositories, enumerated in
-[GOVERNANCE.md's Subprojects section](GOVERNANCE.md#subprojects), sit
+[GOVERNANCE.md's Subprojects section](GOVERNANCE.md#individual-subproject-governance), sit
 outside this file entirely: they are administered directly by the Steering
 Committee, not by a subproject maintainer committee.
 
