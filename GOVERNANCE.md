@@ -301,8 +301,8 @@ caretaker for that subproject, holding its technical authority, until the
 committee is back to three; a committee that cannot return to three within
 a reasonable period is grounds for reviewing whether the subproject should
 be merged or retired. In caretaker mode the committee is, by definition,
-too small to self-select: Steering decides additions to it as ordinary
-Steering business, by simple majority, until it is back to three.
+too small to self-select: Steering decides additions to it by simple
+majority, per person, until it is back to three (see [Voting](#voting)).
 
 Subproject maintainer committees are self-selecting, with Steering
 oversight. Eligibility is scoped to established Component Owners of that

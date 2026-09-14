@@ -20,7 +20,7 @@ people who vote on them, rather than in one org-wide list here. Those
 files are generated from
 [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s
 `repo-tiers.yaml` and are being landed repository by repository; until a
-given repository has one, that file is the record for it.
+given repository has one, `repo-tiers.yaml` is the record for it.
 
 ## Table of Contents
 

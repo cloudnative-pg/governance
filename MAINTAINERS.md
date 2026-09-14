@@ -30,7 +30,8 @@ expected to diverge as those people are promoted into them. Two changes
 still to come are tracked publicly:
 [#68](https://github.com/cloudnative-pg/governance/issues/68) for
 org-balanced voting and the Steering seat mechanism, and
-[#69](https://github.com/cloudnative-pg/governance/issues/69).
+[#69](https://github.com/cloudnative-pg/governance/issues/69) for the
+pathway that brings maintainers from outside EDB onto these committees.
 
 ## Steering Committee
 
