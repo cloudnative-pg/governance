@@ -39,7 +39,7 @@ process, unchanged.
 | Community Participant | None | None | None | N/A | None |
 | Contributor | None (recognition only) | None (may be tagged in a folder-scoped line for review-routing, see note below) | None | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
 | Component Owner | Whole repository | Default (`*`) line | `Write` on the repository | Repository's existing Component Owners, ⅔ majority (its subproject committee, below three named owners) | None |
-| Subproject Maintainer | Whole subproject | N/A (committee seat) | `Maintain` across the subproject's repositories (target; the committee teams do not hold it yet, see [subprojects/README.md](subprojects/README.md#github-teams)) | Self-selected by the committee, Steering oversight | None |
+| Subproject Maintainer | Whole subproject | N/A (committee seat) | `Maintain` across the subproject's repositories, granted to the committee's GitHub team by `cnpg-infra` from each repository's subproject classification (see [subprojects/README.md](subprojects/README.md#github-teams)) | Self-selected by the committee, Steering oversight | None |
 | Steering Committee | Project-wide governance | N/A | Not a GitHub permission tier; the `steering-committee` team is the electorate for Steering-scoped `.gitvote.yml` profiles, not a repo-access grant (`Admin` on the org-control repos already comes from the Infrastructure Team, see [Infrastructure Administration](GOVERNANCE.md#infrastructure-administration)) | Open item, not yet defined (see the note below) | None yet |
 
 Folder-scoped `CODEOWNERS` tagging of a Contributor is an operational

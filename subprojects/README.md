@@ -33,9 +33,9 @@ in each: every repository in each file falls under that subproject's own
 maintainer committee, with any additional named Component Owner recorded
 in that repository's own `COMPONENT_OWNERS.md` as above, not here. The
 committee's authority is what this document set establishes; the
-[GitHub Team](#github-teams) that enforces it does not hold `Maintain` on
-those repositories yet, which is the outstanding step described under
-GitHub Teams below. Path-scoped `CODEOWNERS` review-routing (a Component Owner
+[GitHub Team](#github-teams) that enforces it holds `Maintain` on those
+repositories, granted by `cnpg-infra` from each repository's subproject
+classification. Path-scoped `CODEOWNERS` review-routing (a Component Owner
 tagging a Contributor for review purposes, an operational choice that
 carries no vote and no CNPG Organization Member status; see
 [CONTRIBUTOR_LADDER.md's Component Owner section](../CONTRIBUTOR_LADDER.md#component-owner))
@@ -86,10 +86,17 @@ a subproject rolls out.
 | `<repo>-owners` (existing, per repository, e.g. `governance-owners`) | That repository's real `CODEOWNERS` owners, managed via `cnpg-infra` | Repository-scoped, per `cnpg-infra`'s `repo-tiers.yaml` |
 | `admins` (existing) | Infrastructure Team, delegated by Steering (see [GOVERNANCE.md's Infrastructure Administration section](../GOVERNANCE.md#infrastructure-administration)) | `Admin` on every repository |
 | `steering-committee` | Steering Committee | No repo access of its own; Admin on the org-control repos already comes from `admins` above. Its role is being the electorate for Steering-scoped [`.gitvote.yml`](../.gitvote.yml) profiles (`default`, `governance`) |
-| `core-maintainers` | Core committee | `Write` on this repo, so its `CODEOWNERS` line is honored; `Maintain` on the [Core](core.md) repositories is the target, not yet granted |
-| `supply-chain-maintainers` | Supply Chain committee | `Write` on this repo, so its `CODEOWNERS` line is honored; `Maintain` on the [Supply Chain](supply-chain.md) repositories is the target, not yet granted |
-| `community-ecosystem-maintainers` | Community, Docs & Ecosystem committee | `Write` on this repo, so its `CODEOWNERS` line is honored; `Maintain` on the [Community, Docs & Ecosystem](community-ecosystem.md) repositories is the target, not yet granted |
-| `extensibility-maintainers` | Extensibility committee | `Write` on this repo, so its `CODEOWNERS` line is honored; `Maintain` on the [Extensibility](extensibility.md) repositories is the target, not yet granted |
+| `core-maintainers` | Core committee | `Maintain` on the [Core](core.md) repositories; `Write` on this repo, so its `CODEOWNERS` line is honored |
+| `supply-chain-maintainers` | Supply Chain committee | `Maintain` on the [Supply Chain](supply-chain.md) repositories; `Write` on this repo, so its `CODEOWNERS` line is honored |
+| `community-ecosystem-maintainers` | Community, Docs & Ecosystem committee | `Maintain` on the [Community, Docs & Ecosystem](community-ecosystem.md) repositories; `Write` on this repo, so its `CODEOWNERS` line is honored |
+| `extensibility-maintainers` | Extensibility committee | `Maintain` on the [Extensibility](extensibility.md) repositories; `Write` on this repo, so its `CODEOWNERS` line is honored |
+
+The `Maintain` grant is not listed repository by repository: `cnpg-infra`'s
+`org-policy.yaml` sets `subproject_committee_permission: maintain`, and each
+repository's `subproject` field in `repo-tiers.yaml` names the committee
+team that receives it, so a repository is covered the day it is classified.
+The org-control repositories have no subproject and grant no committee team
+anything.
 
 Team membership must mirror the rosters in MAINTAINERS.md; when a roster
 changes, that change is made in `cnpg-infra`'s config and applied from
@@ -109,11 +116,9 @@ owners see who's on which team.
 > match the rosters in [MAINTAINERS.md](../MAINTAINERS.md), tracked in
 > `cnpg-infra/org-policy.yaml`'s `subproject_committees` section and edited
 > by hand rather than auto-synced, so a roster change needs the GitHub team
-> reconciled in the same pass. What is still outstanding is repository
-> access: each team is granted `write` on this repo (`cnpg-infra`'s
-> `repo-policy.yaml`), without which GitHub ignores its `CODEOWNERS` lines
-> entirely, but the `Maintain` grant on each subproject's own repositories
-> in the table above is not in place yet.
+> reconciled in the same pass. Each team is also granted `write` on this
+> repo (`cnpg-infra`'s `repo-policy.yaml`), without which GitHub ignores
+> its `CODEOWNERS` lines entirely.
 
 ## Communication Channels
 
