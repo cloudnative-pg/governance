@@ -232,11 +232,15 @@ by [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra) (see
 executes a decision already made above and has no bearing on who makes
 it.
 
-A component that isn't yet ready for full status, but is otherwise a
-good fit, may instead be accepted as an **Experimental Component**: full
-CloudNativePG membership, marked "Experimental" on the website and in its
-repository, until the subproject committee confirms, at least twice a
-year, that it has matured to full status.
+A component that isn't yet ready for full status, but is otherwise a good
+fit, may instead be accepted as an **Experimental Component**. It joins on
+the same terms as any other component and is marked "Experimental" in its
+repository and on the website, so adopters can see what they are taking
+on. The subproject's committee reviews its Experimental components at
+least twice a year and decides, by the same vote it used to accept them,
+whether each has matured to full status, should stay Experimental, or
+should be archived. A component stays Experimental until that vote says
+otherwise.
 
 A component that goes inactive, or stops meeting the project's basic
 health expectations (security response, Code of Conduct compliance,
