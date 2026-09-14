@@ -124,19 +124,24 @@ qualifier is deliberate: plain "organization" is used throughout these
 documents to mean the employer an individual works for, and this term
 should never be confused with that.
 
-Every CNPG Organization Member holds a Linux Foundation ID (LFID) with
+Every CNPG Organization Member must hold a Linux Foundation ID (LFID) with
 their GitHub account linked to it and their current employer recorded on
 it. That link is what lets any counting of organizational balance work at
-all: without it a GitHub handle maps to no organization.
+all: without it a GitHub handle maps to no organization. A nomination to
+Component Owner collects the LFID profile up front; Component Owners named
+before that requirement existed are asked to link one, and a missing link
+is a gap to close, not a reason to drop anyone.
 
 Holding an LFID is not the same as being a maintainer of CloudNativePG in
 the CNCF's sense. **For CNCF purposes the project's maintainers are the
 members of the four subproject maintainer committees and of the Steering
-Committee**, which is what
+Committee**, and that is who
 [`.project`](https://github.com/cloudnative-pg/.project)'s
 `maintainers.yaml` and the foundation's own
 [`project-maintainers.csv`](https://github.com/cncf/foundation/blob/main/project-maintainers.csv)
-list. Component Owners hold an LFID and appear in their component's
+record. `maintainers.yaml` carries them under a single
+`project-maintainers` team today, one entry per committee once this
+document is ratified. Component Owners hold an LFID and appear in their component's
 `COMPONENT_OWNERS.md`, but are not listed there: their authority is over
 one repository, not the project. See the foundation's
 [new maintainer guidance](https://github.com/cncf/foundation/blob/main/.github/pull_request_template.md)
