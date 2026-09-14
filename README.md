@@ -16,7 +16,11 @@ project:
 
 Component Owners and Contributors are listed per component, in each
 repository's own `COMPONENT_OWNERS.md` and `CONTRIBUTORS.md`, next to the
-people who vote on them, rather than in one org-wide list here.
+people who vote on them, rather than in one org-wide list here. Those
+files are generated from
+[`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s
+`repo-tiers.yaml` and are being landed repository by repository; until a
+given repository has one, that file is the record for it.
 
 ## Table of Contents
 
@@ -28,7 +32,7 @@ people who vote on them, rather than in one org-wide list here.
 The `governance`, `.project`, `.github`, `cnpg-infra`, and `cnpg-template`
 repositories are a special case: none is part of any subproject, and all
 five are administered directly by the Steering Committee (see
-[GOVERNANCE.md's GitHub Teams section](./GOVERNANCE.md#github-teams-and-communication-channels)),
+[GOVERNANCE.md's Subprojects section](./GOVERNANCE.md#subprojects)),
 not by a subproject maintainer committee.
 
 | Repository | Description |

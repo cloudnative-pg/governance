@@ -1,0 +1,58 @@
+name: "Delegated Team: Membership Change"
+description: "Propose adding or removing an Infrastructure Team or Security Response Team member"
+title: "[Team]: <add|remove> <name> to/from <team>"
+labels: ["team-membership"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Both teams below hold responsibilities the Steering Committee has
+        delegated rather than given away, so Steering decides their
+        membership: see [GOVERNANCE.md's Infrastructure
+        Administration](https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md#infrastructure-administration)
+        and [Security Response
+        Team](https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md#security-response-team)
+        sections for what each one does.
+
+        Once this issue has the details below, run the vote using
+        `.gitvote.yml`'s `default` profile, `/vote` (lazy consensus,
+        falling back to simple majority, per person, of the Steering
+        Committee).
+
+        A passed vote is not the end of it. Adding someone means putting
+        them in the roster table in `MAINTAINERS.md`, in the GitHub team
+        (`admins` for Infrastructure), and, for the Security Response
+        Team, on the intake address, in the private channel where
+        embargoed reports are discussed, and in `SECURITY-INSIGHTS.yml`.
+        Removing someone reverses each of those in the same pass.
+  - type: dropdown
+    id: team
+    attributes:
+      label: Team
+      options:
+        - Infrastructure Team
+        - Security Response Team
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: Change
+      options:
+        - Add
+        - Remove
+    validations:
+      required: true
+  - type: input
+    id: member
+    attributes:
+      label: Member
+      description: GitHub handle
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+    validations:
+      required: true

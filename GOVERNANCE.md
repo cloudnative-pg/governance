@@ -197,10 +197,12 @@ which collects:
   a new subproject is needed instead (see
   [Adding New Subprojects](#adding-new-subprojects))
 - Confirmation that whoever holds rights to the repository's code is in a
-  position to license it under CloudNativePG's Apache License 2.0 and
-  assign the relevant IP to the CloudNativePG organization under the
-  CNCF, either because all contributors agree or because a proper DCO
-  process governs the contribution, or a concrete willingness to get there
+  position to license it under the Apache License 2.0, with a Developer
+  Certificate of Origin sign-off on every contribution, and to transfer
+  any project trademark and logo assets to the Linux Foundation (CNCF
+  Charter §11). CloudNativePG asks for no copyright assignment and
+  operates no CLA. Either the rights are already in that position, or the
+  proposal describes a concrete plan to get there
 - Active development and a real user base, for a repository that already
   has one
 - Code and design quality in line with the rest of the project
@@ -297,7 +299,9 @@ members. If a committee falls below three, the Steering Committee acts as
 caretaker for that subproject, holding its technical authority, until the
 committee is back to three; a committee that cannot return to three within
 a reasonable period is grounds for reviewing whether the subproject should
-be merged or retired.
+be merged or retired. In caretaker mode the committee is, by definition,
+too small to self-select: Steering decides additions to it as ordinary
+Steering business, by simple majority, until it is back to three.
 
 Subproject maintainer committees are self-selecting, with Steering
 oversight. Eligibility is scoped to established Component Owners of that
@@ -357,7 +361,7 @@ Members are expected to represent CloudNativePG as a whole rather than
 their own subproject or employer, and to deal with other participants
 professionally and in keeping with the Code of Conduct.
 
-#### Steering Committee Duties
+### Steering Committee Duties
 
 **The Steering Committee owns**, decided per [Voting](#voting) (lazy
 consensus, falling back to a simple majority per person, except where
@@ -367,8 +371,8 @@ noted otherwise below):
     Committee itself, ⅔ majority per person (see [Voting](#voting))
   - Ownership of [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md): the ladder's
     structure, promotion criteria, and any numeric thresholds are a Steering
-    Committee decision, including advancement for contributors whose work
-    spans multiple subprojects or falls outside any single one
+    Committee decision. Advancement itself is not: every promotion is decided
+    per repository or per committee, by the bodies the ladder names
   - Reviewing and deciding on new subprojects to add; removing subprojects
     that have become inactive
   - Project vision and strategic direction
@@ -435,9 +439,11 @@ A Steering Committee member proposes a wholly new subproject (as opposed
 to a new component joining an existing one, see [Proposing a New
 Component](#proposing-a-new-component)), when a candidate doesn't fit any
 of the four existing groupings, typically Steering reorganizing existing
-components into a new grouping. An external candidate, or an
-unfit component proposal, can prompt this without submitting it to
-Steering directly. The candidate should show:
+components into a new grouping. Anyone may prompt that proposal without
+being on Steering themselves, either by asking for it directly or by
+opening a component proposal that turns out to fit no existing subproject
+(see [Proposing a New Component](#proposing-a-new-component)); only a
+Steering member can put it forward. The candidate should show:
 
 - A mission consistent with CloudNativePG's own;
 - Appropriate licensing and a compatible governance model, or willingness
@@ -515,11 +521,13 @@ published for the community; each subproject maintainer committee holds
 regular subproject-wide discussions of its own (see
 [Subproject Maintainer Committees](#subproject-maintainer-committees)).
 
-Maintainers will also have closed meetings to discuss security reports
-or Code of Conduct violations. Such meetings should be scheduled by any
-Maintainer on receipt of a security issue or CoC report. All current Maintainers
-must be invited to such closed meetings, except for any Maintainer accused of
-a CoC violation. Other sensitive matters, such as removing a Maintainer, may
+Closed meetings are also held to discuss security reports or Code of
+Conduct violations, scheduled by any Maintainer on receipt of one. The
+Steering Committee and the maintainer committee of each affected
+subproject must be invited, rather than every committee in the project:
+a security report usually concerns one subproject, and its own
+maintainers are the people who can act on it. Anyone accused of a Code of
+Conduct violation is not invited. Other sensitive matters, such as removing a Maintainer, may
 also be handled in a closed meeting at the discretion of the Steering
 Committee or the relevant subproject committee; see [Voting](#voting) for the
 principle that governs this.
@@ -553,6 +561,30 @@ CloudNativePG's internal component structure.
 The Steering Committee oversees the security response process, coordinates
 across subprojects, and ensures coverage when personnel change.
 
+### Security Response Team
+
+The **Security Response Team** is the named group that watches the intake
+address, triages what arrives, decides severity and embargo, and routes
+each report to the Component Owners who can fix it. Today it is the
+Steering Committee, acting in that capacity; it is a distinct role from
+Steering's governance authority, and is expected to grow beyond it as
+contributors outside the committee take on security work.
+
+Steering adds and removes members as ordinary Steering business (lazy
+consensus, falling back to a simple majority per person), via the
+[Delegated Team Membership issue template](.github/ISSUE_TEMPLATE/delegated_team_membership.yml).
+A member is onboarded by being added to the roster in
+[MAINTAINERS.md](MAINTAINERS.md), to the intake address, and to the
+private channel where embargoed reports are discussed; removal reverses
+all three, and is also the step taken when someone steps back or becomes
+unreachable. Current membership is recorded in
+[MAINTAINERS.md](MAINTAINERS.md)'s Security Response Team section, which
+is the public record; the same people, with the email addresses reports
+reach them at, are listed in
+[SECURITY-INSIGHTS.yml](SECURITY-INSIGHTS.yml) (`project.administrators`
+and `repository.core-team`), and that file must be updated in the same
+pass.
+
 ## Infrastructure Administration
 
 The Steering Committee is responsible for the project's infrastructure:
@@ -574,7 +606,7 @@ is not a ladder rung and not the same body as the Steering Committee,
 even though the two happen to have identical membership today.
 
 Steering adds or removes Infrastructure Team (`admins`) members via the
-[Infra Team Membership issue template](.github/ISSUE_TEMPLATE/infra_team_membership.yml),
+[Delegated Team Membership issue template](.github/ISSUE_TEMPLATE/delegated_team_membership.yml),
 per [Voting](#voting): lazy consensus, falling back to a simple majority
 per person, the same as its other day-to-day business. Current membership is
 recorded in [MAINTAINERS.md](MAINTAINERS.md)'s Infrastructure Team
@@ -590,6 +622,15 @@ or Component Owner with standing over that decision raises an objection
 within a reasonable review window, so everyday decisions don't need an
 explicit vote, only the absence of a block. Periodically, a decision needs
 an explicit vote instead.
+
+A threshold is measured against everyone eligible to vote, not against the
+votes actually cast, and a proposal carries once support reaches it. Two
+consequences are worth stating rather than leaving to be discovered. A
+simple majority is reached at exactly half, so two in favour out of four
+eligible voters carries. And at ⅔, a committee of three to five members
+needs every eligible member except the abstaining one, which makes a
+committee-route removal unanimity of the members other than the person
+under review.
 
 Votes happen in the open: a public GitHub issue or discussion, explicit
 +1/-1 comments from eligible voters, and a final tally posted by whoever
@@ -613,6 +654,8 @@ rule CloudNativePG has always used.
 | Governance changes (this document, see [Amendments](#amendments)) | Steering Committee | ⅔ majority, per person |
 | Changes to [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md) | Steering Committee | ⅔ majority, per person |
 | Adding/removing subprojects | Steering Committee | ⅔ majority, per person |
+| Infrastructure Team and Security Response Team membership | Steering Committee | Lazy consensus, falling back to simple majority per person |
+| Adding a member to a committee in caretaker mode (below three members) | Steering Committee | Simple majority, per person |
 | Everything else Steering owns (see [Steering Committee Duties](#steering-committee-duties)) | Steering Committee | Lazy consensus, falling back to simple majority per person |
 
 ### Subproject-level decisions
@@ -626,6 +669,9 @@ their employers make (see [Project Structure](#project-structure)).
 | Adding a subproject maintainer committee member | The existing members of that committee | Simple majority, per person |
 | Removing a subproject maintainer committee member (committee route) | That committee, with the member under review abstaining | ⅔ majority, per person |
 | Removing a subproject maintainer committee member (Steering backstop) | Steering Committee | Simple majority, per person |
+| Accepting a new component into the subproject | That subproject's committee | Simple majority, per person |
+| Confirming an Experimental component has reached full status | That subproject's committee | Simple majority, per person |
+| Archiving a component | That subproject's committee | Simple majority, per person |
 
 Repository-level decisions follow the same per-person principle, one level
 further down; see [Contributors and Component Owners](#contributors-and-component-owners)
@@ -634,7 +680,7 @@ for the full breakdown.
 
 At the discretion of the Steering Committee or a subproject committee, the
 deliberation behind a vote may happen privately, for example on
-[the private Maintainer mailing list](mailto:security@cloudnative-pg.io) or
+[the private security intake address](mailto:security@cloudnative-pg.io) or
 during a closed meeting, for a Maintainer removal or a security matter (see
 [Meetings](#meetings)). Privacy applies to the discussion, not the outcome:
 the final decision and its rationale, redacted for privacy where needed, are

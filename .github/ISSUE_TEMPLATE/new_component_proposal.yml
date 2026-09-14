@@ -2,7 +2,6 @@ name: "New Component Proposal"
 description: "Propose that a new repository join CloudNativePG as a component"
 title: "[New Component]: <repository name>"
 labels: ["component-proposal"]
-projects: ["cloudnative-pg/governance"]
 body:
   - type: markdown
     attributes:
@@ -108,12 +107,13 @@ body:
       label: License adoption and IP transfer
       description: >
         Confirm that whoever holds rights to this repository's code is in
-        a position to license it under CloudNativePG's Apache License 2.0
-        and assign the relevant IP to the CloudNativePG organization
-        under the CNCF, either because all contributors agree, or
-        because a proper DCO process governs the contribution. If
-        there's a gap (e.g. an incompatible license, or prior
-        contributors who can't be reached for agreement), describe the
-        concrete plan for resolving it before this is accepted.
+        a position to license it under the Apache License 2.0, with a
+        Developer Certificate of Origin sign-off on every contribution,
+        and to transfer any project trademark and logo assets to the
+        Linux Foundation (CNCF Charter, section 11). CloudNativePG asks
+        for no copyright assignment and operates no CLA. If there's a gap
+        (an incompatible license, prior contributors who can't be reached,
+        a trademark held elsewhere), describe the concrete plan for
+        resolving it before this is accepted.
     validations:
       required: true

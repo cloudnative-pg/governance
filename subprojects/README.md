@@ -29,10 +29,13 @@ repository's own `CONTRIBUTORS.md`, and only where a repository has any.
 - [Extensibility](extensibility.md)
 
 Two things apply to every file above, stated once here rather than repeated
-in each: every repository in each file is already owned by that subproject's
-own maintainer committee, via the corresponding [GitHub Team](#github-teams),
-with any additional named Component Owner recorded in that repository's
-own `COMPONENT_OWNERS.md` as above, not here. Path-scoped `CODEOWNERS` review-routing (a Component Owner
+in each: every repository in each file falls under that subproject's own
+maintainer committee, with any additional named Component Owner recorded
+in that repository's own `COMPONENT_OWNERS.md` as above, not here. The
+committee's authority is what this document set establishes; the
+[GitHub Team](#github-teams) that enforces it does not hold `Maintain` on
+those repositories yet, which is the outstanding step described under
+GitHub Teams below. Path-scoped `CODEOWNERS` review-routing (a Component Owner
 tagging a Contributor for review purposes, an operational choice that
 carries no vote and no CNPG Organization Member status; see
 [CONTRIBUTOR_LADDER.md's Component Owner section](../CONTRIBUTOR_LADDER.md#component-owner))

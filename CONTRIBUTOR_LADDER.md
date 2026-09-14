@@ -39,7 +39,7 @@ process, unchanged.
 | Community Participant | None | None | None | N/A | None |
 | Contributor | None (recognition only) | None (may be tagged in a folder-scoped line for review-routing, see note below) | None | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
 | Component Owner | Whole repository | Default (`*`) line | `Write` on the repository | Repository's existing Component Owners, ⅔ majority (its subproject committee, below three named owners) | None |
-| Subproject Maintainer | Whole subproject | N/A (committee seat) | `Maintain` across the subproject's repositories | Self-selected by the committee, Steering oversight | None |
+| Subproject Maintainer | Whole subproject | N/A (committee seat) | `Maintain` across the subproject's repositories (target; the committee teams do not hold it yet, see [subprojects/README.md](subprojects/README.md#github-teams)) | Self-selected by the committee, Steering oversight | None |
 | Steering Committee | Project-wide governance | N/A | Not a GitHub permission tier; the `steering-committee` team is the electorate for Steering-scoped `.gitvote.yml` profiles, not a repo-access grant (`Admin` on the org-control repos already comes from the Infrastructure Team, see [Infrastructure Administration](GOVERNANCE.md#infrastructure-administration)) | Open item, not yet defined (see the note below) | None yet |
 
 Folder-scoped `CODEOWNERS` tagging of a Contributor is an operational
@@ -124,12 +124,23 @@ qualifier is deliberate: plain "organization" is used throughout these
 documents to mean the employer an individual works for, and this term
 should never be confused with that.
 
-Every CNPG Organization Member is expected to hold a Linux Foundation ID
-(LFID) recording their current employer, kept in
+Every CNPG Organization Member holds a Linux Foundation ID (LFID) with
+their GitHub account linked to it and their current employer recorded on
+it. That link is what lets any counting of organizational balance work at
+all: without it a GitHub handle maps to no organization.
+
+Holding an LFID is not the same as being a maintainer of CloudNativePG in
+the CNCF's sense. **For CNCF purposes the project's maintainers are the
+members of the four subproject maintainer committees and of the Steering
+Committee**, which is what
 [`.project`](https://github.com/cloudnative-pg/.project)'s
-`maintainers.yaml`, the same record CNCF's own tooling reads. Every
-current Maintainer already holds one; `.project`'s `maintainers.yaml`
-just doesn't record it yet (see [MAINTAINERS.md](MAINTAINERS.md)).
+`maintainers.yaml` and the foundation's own
+[`project-maintainers.csv`](https://github.com/cncf/foundation/blob/main/project-maintainers.csv)
+list. Component Owners hold an LFID and appear in their component's
+`COMPONENT_OWNERS.md`, but are not listed there: their authority is over
+one repository, not the project. See the foundation's
+[new maintainer guidance](https://github.com/cncf/foundation/blob/main/.github/pull_request_template.md)
+for what that listing involves.
 
 ## Component Owner
 
@@ -160,7 +171,10 @@ own repository.
   [subprojects/README.md](subprojects/README.md#github-teams)). Nomination
   comes from any member of that same deciding body, and the vote is held on
   an issue in the component's own repository. Removal follows the same
-  process.
+  process. The threshold at which this rung falls back to the committee is
+  higher than the Contributor rung's on purpose: a ⅔ vote among one or two
+  owners is either meaningless or a veto, whereas a simple majority still
+  behaves sensibly with two.
 
 > [!NOTE]
 > **GitHub mechanics:** GitHub grants `Write` at the repository level; there
@@ -282,15 +296,28 @@ recorded, so GitHub access and the public record match the decision.
 | Steering Committee | [MAINTAINERS.md](MAINTAINERS.md) Steering Committee table; `steering-committee` GitHub team membership |
 | Infrastructure Team | [MAINTAINERS.md](MAINTAINERS.md) Infrastructure Team table; `admins` GitHub team membership (see [GOVERNANCE.md's Infrastructure Administration section](GOVERNANCE.md#infrastructure-administration)) |
 
-> [!IMPORTANT]
-> **Open item:** CNCF projects typically also keep a foundation-level
-> maintainer list (a `project-maintainers.csv` entry in
-> [cncf/foundation](https://github.com/cncf/foundation/blob/main/project-maintainers.csv)
-> plus a `cncf-cloudnative-pg-maintainers@lists.cncf.io`-style mailing
-> list), updated the same way. See the foundation's own
-> [new maintainer guidance](https://github.com/cncf/foundation/blob/main/.github/pull_request_template.md).
-> Which CNPG tiers count as "maintainer" there (Subproject Maintainer and
-> Steering only, or Component Owner too) hasn't been decided.
+A promotion to, or removal from, one of the two committee tiers is also a
+change to the project's CNCF-facing maintainer list: update
+[`.project`](https://github.com/cloudnative-pg/.project)'s
+`maintainers.yaml` and the foundation's `project-maintainers.csv` in the
+same pass (see
+[CNPG Organization Member](#cnpg-organization-member) for why those two
+cover the committee tiers only).
+
+### Keeping affiliation current
+
+Anyone from Component Owner upward who changes employer updates their
+affiliation **within 30 days**: their LFID profile first, since everything
+else is meant to match it, then whichever of these records names them. For
+a committee member that is [MAINTAINERS.md](MAINTAINERS.md)'s Organization
+column and `.project`'s `maintainers.yaml`; for a Component Owner it is
+`people.yaml` in
+[`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra), which is what
+the generated `COMPONENT_OWNERS.md` files are rendered from. Someone who
+leaves an employer without joining another writes "Independent" rather than
+leaving the field empty. The Steering Committee checks these against the
+LFID records as part of its annual review of organizational diversity (see
+[GOVERNANCE.md](GOVERNANCE.md#organizational-diversity)).
 
 <!-- Adapted from Crossplane's GOVERNANCE.md#becoming-a-maintainer, a
      graduated CNCF project. -->

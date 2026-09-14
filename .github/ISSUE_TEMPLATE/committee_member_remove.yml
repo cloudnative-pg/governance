@@ -2,7 +2,6 @@ name: "Subproject Committee: Remove Member"
 description: "Propose removing a member from a subproject maintainer committee"
 title: "[Committee Remove]: <name> from <subproject>"
 labels: ["committee-membership"]
-projects: ["cloudnative-pg/governance"]
 body:
   - type: markdown
     attributes:

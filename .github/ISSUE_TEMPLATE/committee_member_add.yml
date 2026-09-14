@@ -2,7 +2,6 @@ name: "Subproject Committee: Add Member"
 description: "Propose adding a member to a subproject maintainer committee"
 title: "[Committee Add]: <name> to <subproject>"
 labels: ["committee-membership"]
-projects: ["cloudnative-pg/governance"]
 body:
   - type: markdown
     attributes:
@@ -19,9 +18,10 @@ body:
         - Extensibility: `/vote-extensibility`
 
         Committees are self-selecting: Steering does not vote on an
-        addition. Every subproject has a committee of at least three
-        members; if one has fallen below three, Steering is its caretaker
-        until it is back to three (see the section linked above).
+        addition. The exception is a committee that has fallen below its
+        three-member floor, which is too small to self-select: while
+        Steering is its caretaker, Steering decides additions instead, by
+        simple majority with `/vote` (see the section linked above).
   - type: dropdown
     id: subproject
     attributes:
