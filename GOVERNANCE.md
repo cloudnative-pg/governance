@@ -306,8 +306,8 @@ majority, per person, until it is back to three (see [Voting](#voting)).
 
 Subproject maintainer committees are self-selecting, with Steering
 oversight. Eligibility is scoped to established Component Owners of that
-subproject's repositories; being tagged in a folder-scoped `CODEOWNERS`
-line for review-routing doesn't count. This gives contributors to charts,
+subproject's repositories; being named on a path in `CODEOWNERS` doesn't
+count. This gives contributors to charts,
 plugins, container images, or documentation the same path to governance
 influence as contributors to the core operator. A nominee is proposed via
 the [Committee Add issue template](.github/ISSUE_TEMPLATE/committee_member_add.yml)
@@ -516,7 +516,7 @@ the repository listings live in
 component grouping is routine editorial work needing no vote (see
 [Individual Subproject Governance](#subprojects)).
 
-## Contributors and Component Owners
+## Contributors, Reviewers and Component Owners
 
 The project recognizes different levels of responsibility, forming a
 contributor ladder that rewards participation and commitment. The ladder
@@ -525,9 +525,10 @@ documented in [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md), owned by the
 Steering Committee (see [Voting](#voting)); this section covers only the
 two rungs below Subproject Maintainer.
 
-These two roles sit below Subproject Maintainer on the ladder: a Contributor
-adds value without a defined area of ownership, and a Component Owner owns
-an entire component. Their requirements, promotion process, and GitHub
+Three roles sit below Subproject Maintainer on the ladder: a Contributor
+adds value without a defined area of ownership, a Reviewer is trusted with
+review of named paths within one component, and a Component Owner owns an
+entire component. Their requirements, promotion process, and GitHub
 access are defined in [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md), not
 here, to avoid keeping the same rules in two places. Component Owners are
 recorded in their own component's `COMPONENT_OWNERS.md`, and Contributors
@@ -537,8 +538,9 @@ are generated from
 [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra), so a
 promotion is recorded once and lands wherever it applies. See
 [CONTRIBUTOR_LADDER.md's Component Owner section](CONTRIBUTOR_LADDER.md#component-owner)
-for folder-scoped `CODEOWNERS` tagging and the full promotion mechanism,
-including the subproject committee's backstop role; not repeated here.
+for what being named in `CODEOWNERS` does and doesn't mean, and the full
+promotion mechanism including the subproject committee's backstop role;
+not repeated here.
 
 ## Meetings
 
@@ -704,7 +706,7 @@ their employers make (see [Project Structure](#project-structure)).
 | Archiving a component | That subproject's committee | Simple majority, per person |
 
 Repository-level decisions follow the same per-person principle, one level
-further down; see [Contributors and Component Owners](#contributors-and-component-owners)
+further down; see [Contributors, Reviewers and Component Owners](#contributors-reviewers-and-component-owners)
 above, and [CONTRIBUTOR_LADDER.md's At a Glance table](CONTRIBUTOR_LADDER.md#at-a-glance)
 for the full breakdown.
 

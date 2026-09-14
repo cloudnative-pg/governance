@@ -23,6 +23,7 @@ process, unchanged.
 - [At a Glance](#at-a-glance)
 - [Community Participant](#community-participant)
 - [Contributor](#contributor)
+- [Reviewer](#reviewer)
 - [CNPG Organization Member](#cnpg-organization-member)
 - [Component Owner](#component-owner)
 - [Subproject Maintainer](#subproject-maintainer)
@@ -37,26 +38,34 @@ process, unchanged.
 | Tier | Scope | `CODEOWNERS` entry | GitHub access | Promotion vote | Organization cap |
 | --- | --- | --- | --- | --- | --- |
 | Community Participant | None | None | None | N/A | None |
-| Contributor | None (recognition only) | None (may be tagged in a folder-scoped line for review-routing, see note below) | None | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
-| Component Owner | Whole repository | Default (`*`) line | `Write` on the repository | Repository's existing Component Owners, ⅔ majority (its subproject committee, below three named owners) | None |
+| Contributor | None (recognition only) | None | None | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
+| Reviewer | Named paths in one repository | Named individually on those paths, advisory | `Write` on the repository; GitHub cannot scope it to those paths | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
+| Component Owner | Whole repository | None individually; the `*` rule names the `<repo>-owners` team they belong to | `Write` on the repository | Repository's existing Component Owners, ⅔ majority (its subproject committee, below three named owners) | None |
 | Subproject Maintainer | Whole subproject | N/A (committee seat) | `Maintain` across the subproject's repositories, granted to the committee's GitHub team by `cnpg-infra` from each repository's subproject classification (see [subprojects/README.md](subprojects/README.md#github-teams)) | Self-selected by the committee, Steering oversight | None |
 | Steering Committee | Project-wide governance | N/A | Not a GitHub permission tier; the `steering-committee` team is the electorate for Steering-scoped `.gitvote.yml` profiles, not a repo-access grant (`Admin` on the org-control repos already comes from the Infrastructure Team, see [Infrastructure Administration](GOVERNANCE.md#infrastructure-administration)) | Open item, not yet defined (see the note below) | None yet |
 
-Folder-scoped `CODEOWNERS` tagging of a Contributor is an operational
-choice, not a promotion; see [Contributor](#contributor) and
-[Component Owner](#component-owner) below for what it does and doesn't
-grant, and how promotion actually works.
+`CODEOWNERS` is not where any of this is decided. It is generated from
+[`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra) and reflects
+two different things: **a team named there means ownership**, via the
+`<repo>-owners` team the `*` rule points at, and **an individual named
+there means review** of the paths that name them. Ownership itself is
+recorded in `repo-tiers.yaml` and published in each repository's
+`COMPONENT_OWNERS.md`; no Component Owner appears in `CODEOWNERS` by
+name.
 
 ```mermaid
 flowchart TD
     CP["Community Participant<br/><i>engages, no formal tier</i>"]
     CT["Contributor<br/><i>recognized contribution,<br/>no repository access</i>"]
-    CO["Component Owner<br/><i>whole-repo CODEOWNERS,<br/>Write access</i>"]
+    RV["Reviewer<br/><i>named on paths in CODEOWNERS,<br/>Write access</i>"]
+    CO["Component Owner<br/><i>in the repo's owners team,<br/>Write access</i>"]
     SM["Subproject Maintainer<br/><i>committee seat,<br/>Maintain access subproject-wide</i>"]
     SC["Steering Committee<br/><i>project-wide governance,<br/>seat mechanism not yet defined</i>"]
 
     CP --> CT
+    CT -->|"repo's Component Owners<br/>simple majority"| RV
     CT -->|"repo's Component Owners<br/>⅔ majority"| CO
+    RV -->|"repo's Component Owners<br/>⅔ majority"| CO
     CO -->|"subproject committee<br/>self-selects, simple majority"| SM
     SM -.->|"not yet defined"| SC
 
@@ -68,7 +77,7 @@ flowchart TD
     classDef open fill:#fff4e0,stroke:#c9822a,stroke-width:2px,stroke-dasharray:4 3,color:#1a1a1a;
     classDef note fill:#f5f5f5,stroke:#999999,stroke-width:1px,color:#333333;
 
-    class CP,CT,CO,SM rung;
+    class CP,CT,RV,CO,SM rung;
     class SC open;
     class OM note;
 ```
@@ -96,13 +105,14 @@ too.
   issues, submitting pull requests, contributing to documentation,
   participating in meetings, helping community members, providing feedback
   on issues/PRs, testing releases, or promoting the project in public.
-- Privileges: listed in that repository's own `CONTRIBUTORS.md`; eligible to be
-  proposed for Component Owner; may, at a repository's discretion, be
-  tagged in a folder-scoped `CODEOWNERS` line for review-routing (see
+- Privileges: listed in that repository's own `CONTRIBUTORS.md`; eligible
+  to be proposed for [Reviewer](#reviewer), which is the usual next step,
+  or for Component Owner directly. A Contributor cannot be named in
+  `CODEOWNERS`: GitHub ignores an entry for anyone without `Write` (see
   [At a Glance](#at-a-glance)).
 - Promotion: elected by simple majority vote of whichever body currently
   owns the repository by default: its existing Component Owners; if none
-  have been individually named, its subproject maintainer committee (see
+  have been recorded, its subproject maintainer committee (see
   [subprojects/README.md](subprojects/README.md#github-teams)). Nomination
   comes from any member of that same deciding body, and the vote is held on
   an issue in the repository the nominee contributed to.
@@ -115,11 +125,48 @@ metrics threshold.
      (PRs/year, months active), but count-based bars invite gaming
      (drive-by PRs, padding) more than they capture real contribution. -->
 
+## Reviewer
+
+Reviewers are trusted with review of part of a repository: a directory, a
+subsystem, a set of files. They are named individually on those paths in
+that repository's `CODEOWNERS`, so GitHub requests them automatically on
+any pull request touching their area.
+
+- Requirements: an established Contributor with a track record in the area
+  being proposed for.
+- Responsibilities: review what you are named on within a reasonable time,
+  or say when you cannot. [Inactivity](#inactivity) applies to this rung
+  like any other.
+- Privileges: named on those paths in `CODEOWNERS`; `Write` on that one
+  repository; listed in its `COMPONENT_OWNERS.md` under Reviewers;
+  eligible to be proposed for Component Owner.
+- Not conferred: organization membership, or
+  [CNPG Organization Member](#cnpg-organization-member) status. `Write` is
+  granted on that repository alone and can be held as a direct
+  collaborator; someone already a member for other reasons keeps that.
+- Promotion: elected by simple majority of that repository's existing
+  Component Owners, or of its subproject maintainer committee where none
+  are recorded, nominated by any member of that body, on an issue in the
+  repository itself.
+
+> [!IMPORTANT]
+> GitHub grants permissions per repository, never per path, and ignores a
+> `CODEOWNERS` entry for anyone without `Write`. A Reviewer therefore holds
+> the same repository-wide permission a Component Owner does, including the
+> ability to merge a pull request that has met its requirements; the named
+> paths are what the project asks of them, not a boundary GitHub enforces.
+> The branch ruleset's approvals and checks apply to them as to anyone.
+
+Being named on a path is advisory: the repository's owners are co-owners of
+every path, so a Reviewer is always requested and never blocking.
+
 ## CNPG Organization Member
 
 "CloudNativePG Organization Member" (**CNPG Organization Member** for
 short) is not a separate promotion tier; it's the umbrella term for anyone
-holding Component Owner status or above, on any repository. The "CNPG"
+holding Component Owner status or above, on any repository.
+[Reviewers](#reviewer) are not included despite holding `Write`: the term
+marks authority over a component, not access to one. The "CNPG"
 qualifier is deliberate: plain "organization" is used throughout these
 documents to mean the employer an individual works for, and this term
 should never be confused with that.
@@ -158,12 +205,14 @@ don't need sign-off from a subproject committee for routine work in their
 own repository.
 
 <!-- Corresponds to the CNCF template's optional "Subproject Maintainer"
-     role. CloudNativePG doesn't adopt the template's separate "Reviewer"
-     role: folder-scoped CODEOWNERS tagging (see At a Glance) is an
-     operational choice, not a formal rung with its own vote and electorate. -->
+     role. The template's separate "Reviewer" role is not adopted here yet,
+     though the practice exists: see the note on naming an individual on a
+     path, and the separate proposal to formalise it. -->
 
-- Requirements: an established Contributor with a track record and
-  demonstrated expertise in the specific component being proposed for.
+- Requirements: an established Contributor or [Reviewer](#reviewer) with a
+  track record and demonstrated expertise in the component being proposed
+  for. Most people arrive here from Reviewer, having already carried review
+  of part of it.
 - Privileges: `Write` access to the relevant repository, whole-repository
   entry in its `CODEOWNERS` file, listed in that repository's own
   `COMPONENT_OWNERS.md`; counts as a
@@ -171,7 +220,8 @@ own repository.
   proposed for Subproject Maintainer.
 - Promotion: elected by ⅔ majority vote of whichever body currently owns
   the repository by default: its existing Component Owners, provided at
-  least three are individually named; below that threshold (including
+  least three Component Owners are recorded for it, which Reviewers do not
+  count towards; below that threshold (including
   none), its subproject maintainer committee (see
   [subprojects/README.md](subprojects/README.md#github-teams)). Nomination
   comes from any member of that same deciding body, and the vote is held on
@@ -182,23 +232,28 @@ own repository.
   behaves sensibly with two.
 
 > [!NOTE]
-> **GitHub mechanics:** GitHub grants `Write` at the repository level; there
-> is no native way to scope permissions by path. A Component Owner's
-> `CODEOWNERS` line is the repository's default (`*`) entry, so they're
-> auto-requested and required for review on anything not otherwise covered
-> by a folder-scoped line.
+> **GitHub mechanics:** GitHub grants `Write` at the repository level and
+> has no native way to scope permissions by path, so every rung from
+> Component Owner down that appears in `CODEOWNERS` at all holds the same
+> repository-wide permission. What differs is scope of responsibility, not
+> reach. Component Owners are reached through the `<repo>-owners` team on
+> the `*` rule, which makes them the reviewers of record for anything no
+> narrower rule covers.
 
 > [!NOTE]
-> **Folder-scoped review routing:** a repository's Component Owners may add
-> a folder-scoped `CODEOWNERS` line naming any Contributor, for
-> review-routing convenience only (e.g. `docs/ @some-contributor`). This is
-> an operational choice made by lazy consensus among that repository's own
-> Component Owners, not a promotion: it grants no additional GitHub
-> permission, no vote, and no CNPG Organization Member status. Because a
-> "Require review from Code Owners" branch-protection rule only counts an
-> approval from someone holding `Write` on the repository, a Contributor
-> tagged this way is auto-requested but their approval alone doesn't
-> satisfy that rule until they're promoted to Component Owner.
+> **Naming an individual on a path:** GitHub ignores a `CODEOWNERS` entry
+> for anyone without `Write`, silently. It is not that their approval
+> counts for less; they are not requested at all, and the line looks
+> correct while doing nothing. So an individual named on a path holds
+> `Write`, which a Contributor by definition does not, and the practice
+> therefore describes a rung above Contributor rather than a way of
+> involving one.
+>
+> That is what the [Reviewer](#reviewer) rung is: the people named on
+> paths. It exists in fact today, five of them across `cloudnative-pg`,
+> `postgres-extensions-containers` and `klio`, each with `Write` granted by
+> hand and recorded in no policy file; naming the rung is what brings that
+> access under the same management as everything else.
 
 - Path onward: Component Owners of repositories within a formalized
   subproject are expected to become members of that subproject's maintainer
@@ -211,7 +266,7 @@ nominations within a reasonable time. If they don't, or a repository has too
 few Component Owners to reach the required threshold, the subproject
 maintainer committee may add a Component Owner to that repository directly
 (see [GOVERNANCE.md's Contributors and Component Owners
-section](GOVERNANCE.md#contributors-and-component-owners)). Steering does
+section](GOVERNANCE.md#contributors-reviewers-and-component-owners)). Steering does
 not intervene at the repository level: the committee is always the backstop
 for its own repositories, just as Steering is the backstop for a subproject
 maintainer committee's own membership, and for a committee that has fallen
@@ -232,8 +287,8 @@ current committee rosters.
 
 - Requirements: demonstrated technical judgment and sustained contribution
   across the subproject, as an established Component Owner of one or more
-  of its repositories. Being tagged in a folder-scoped `CODEOWNERS` line for
-  review-routing does not qualify on its own. A seat also carries an
+  of its repositories. Being named on a path in `CODEOWNERS` does not
+  qualify on its own. A seat also carries an
   ongoing time commitment,
   meaningful enough to sustain the subproject's pace, guidance rather than
   a hard numeric gate, consistent with CloudNativePG's preference for
@@ -296,6 +351,7 @@ recorded, so GitHub access and the public record match the decision.
 | Tier | Recorded in |
 | --- | --- |
 | Contributor | That repository's `CONTRIBUTORS.md`, generated from [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s `repo-tiers.yaml` (`contributors:`) |
+| Reviewer | That repository's `COMPONENT_OWNERS.md` under Reviewers, the paths naming them in its `CODEOWNERS`, and a `Write` grant on that repository alone, held directly rather than through a team, since the rung implies no organization membership. All three come from one entry in [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s `repo-tiers.yaml` |
 | Component Owner | That repository's `COMPONENT_OWNERS.md`, and its `<repo>-owners` GitHub team membership (see [subprojects/README.md's GitHub Teams section](subprojects/README.md#github-teams)); both are generated from one entry in [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s `repo-tiers.yaml`, so recording the vote there does both |
 | Subproject Maintainer | [MAINTAINERS.md](MAINTAINERS.md) committee roster; `subproject-*` GitHub team membership (see [GitHub Teams](GOVERNANCE.md#github-teams-and-communication-channels)) |
 | Steering Committee | [MAINTAINERS.md](MAINTAINERS.md) Steering Committee table; `steering-committee` GitHub team membership |
@@ -347,8 +403,9 @@ their role without needing to re-earn it.
 
 Involuntary removal or demotion follows the same vote-based process, and is
 decided at the same level, as promotion for each tier: a repository's
-existing Component Owners, for Contributors by simple majority and for
-Component Owners by ⅔ majority, with the subproject maintainer committee as
+existing Component Owners, for Contributors and Reviewers by simple
+majority and for Component Owners by ⅔ majority, with the subproject
+maintainer committee as
 backstop where a repository's owners are stalled or too few to reach the
 threshold. This may be triggered by repeated inactivity, failing to meet a
 role's requirements, or a Code of Conduct violation.
