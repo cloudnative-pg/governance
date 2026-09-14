@@ -333,8 +333,9 @@ Maintainers listed in [MAINTAINERS.md](MAINTAINERS.md).
   ratified, Steering membership stays today's Maintainers list, not
   something reached by climbing the rungs below.
 
-<a id="worked-example"></a>
-> **Worked example:** Ana, Ben, and Cleo are Component Owners of `docs`.
+### Worked Example
+
+> Ana, Ben, and Cleo are Component Owners of `docs`.
 > Ana and Cleo are also members of the Community, Docs & Ecosystem
 > Maintainer Committee, so they have technical authority over every
 > component in that subproject (`docs`, `cloudnative-pg.github.io`,
