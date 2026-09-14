@@ -508,6 +508,14 @@ the proposal itself. The vote stays open for at least one week even if it
 would already pass, so an amendment is genuinely circulated for comment
 before it's adopted.
 
+Every change to this document is an amendment, including one that looks
+purely editorial: the vote opens on any pull request that touches it,
+with no exception for a typo. That is deliberate, and it is the reason
+the repository listings live in
+[subprojects/](subprojects/README.md) instead, where reorganising a
+component grouping is routine editorial work needing no vote (see
+[Individual Subproject Governance](#subprojects)).
+
 ## Contributors and Component Owners
 
 The project recognizes different levels of responsibility, forming a
