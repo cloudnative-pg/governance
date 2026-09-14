@@ -277,7 +277,8 @@ Each subproject has its own maintainer committee, responsible for:
 - Responding to security reports within the subproject's scope, escalating to
   the Steering Committee as needed
 - Supporting the Code of Conduct within the subproject and referring
-  violations to the Code of Conduct committee
+  violations to the addresses in [Code of Conduct](#code-of-conduct),
+  rather than handling them within the committee
 - Regularly attending the project's recurring community meetings
 - Periodically attending Steering Committee meetings to provide input, when
   invited or when subproject business is on the agenda
@@ -382,8 +383,9 @@ noted otherwise below):
   - Arbitrating inter-subproject disagreements (for example, a conflict
     between Extensibility and Core over CNPG-I plugin framework
     direction)
-  - Code of Conduct committee selection and ratification of CoC enforcement
-    decisions
+  - Code of Conduct reports: reviewing them and ratifying enforcement
+    decisions today, and constituting the standing committee that will
+    take that over (see [Code of Conduct](#code-of-conduct))
   - Security response coordination (who triages, who patches, the escalation
     path across subprojects) and acting on other escalated code-quality
     issues a subproject can't resolve on its own
@@ -414,24 +416,44 @@ maintainer committees for:
   decisions spanning multiple components follow the same principle at the
   subproject committee level
 
-## Code of Conduct Committee
+## Code of Conduct
 
-Reports of [Code of Conduct](CODE_OF_CONDUCT.md) violations go to
-[conduct@cloudnative-pg.io](mailto:conduct@cloudnative-pg.io), reviewed
-confidentially by a standing **Code of Conduct Committee** of 3 to 5
-people. The Steering Committee selects the Committee for diverse
-representation (employer, gender, race, background, and region) rather
-than project seniority alone; membership isn't limited to existing CNPG
-contributors. To avoid reviewer fatigue, Steering rotates out at least one
-member each year.
+CloudNativePG has adopted the [CNCF Code of Conduct](CODE_OF_CONDUCT.md)
+unchanged. A report can be made in either of two places, and a reporter
+never has to choose correctly for it to be handled:
 
-The Committee deliberates in closed meetings and, where it finds a
-violation, recommends a response scaled to its severity, from a private
-apology up to expulsion from the project. A recommendation to demote or
-expel a contributor is forwarded to the Steering Committee, which ratifies
-it in a closed meeting. If the accused or the reporter is a Steering
-Committee member, the Committee instead forwards the matter to CNCF staff
-for final arbitration.
+- [conduct@cloudnative-pg.io](mailto:conduct@cloudnative-pg.io), which
+  reaches the project.
+- [conduct@cncf.io](mailto:conduct@cncf.io), the CNCF Code of Conduct
+  Committee, which is independent of this project and can act on any
+  report regardless of who it concerns.
+
+**Who handles a report today.** The Steering Committee reviews reports
+sent to the project address, confidentially and in closed session, acting
+in that capacity rather than as the project's governing body. Where it
+finds a violation it decides a response scaled to its severity, from a
+private conversation up to expulsion from the project; a demotion or
+expulsion is ratified by the Steering Committee in closed session before
+it takes effect.
+
+**Where that is not appropriate.** If a report concerns a member of the
+Steering Committee, or the reporter would rather it not be read by anyone
+in CloudNativePG's leadership, it goes to the CNCF Code of Conduct
+Committee instead, whose decision the project applies. Steering does not
+review a report about one of its own members, and does not need to be told
+that a report has been made to the CNCF.
+
+**Where this is heading.** Handling reports inside Steering is workable
+while the project's leadership is small, but it is not the arrangement
+this project wants: the reviewer and the governing body should not be the
+same five people. The target is a standing **Code of Conduct Committee**
+of 3 to 5 people, selected by Steering for diverse representation
+(employer, gender, race, background, and region) rather than project
+seniority, not limited to existing CloudNativePG contributors, with at
+least one member rotated out each year to avoid reviewer fatigue. Steering
+constitutes it and records the roster in
+[MAINTAINERS.md](MAINTAINERS.md); until that happens, this section
+describes what actually occurs.
 
 ## Adding New Subprojects
 
