@@ -76,7 +76,25 @@ profiles:
     #
     # The percentage is calculated based on the number of votes in favor and the
     # number of allowed voters (see allowed_voters field below for more details).
-    pass_threshold: 50
+    #
+    # 50.01, not 50, because gitvote passes a vote on
+    # `in_favor_percentage >= pass_threshold`: at a flat 50 an even-sized
+    # electorate splitting down the middle would pass its own tie, and a
+    # simple majority is strictly more than half. A percentage can't express
+    # "half plus one vote", so the bar sits just above 50 instead. The
+    # smallest real majority of N voters is 50 + 100/N percent, which clears
+    # 50.01 for any committee up to 10000 people.
+    #
+    # The two-thirds profiles below use 66.66 for the same reason: two-thirds
+    # is 66.666..., so a flat 66 sat just under its own bar. Not 66.67 --
+    # for a committee divisible by three the exact two-thirds computes to
+    # 66.6666..., which falls under 66.67 and would break a legitimate
+    # 2-of-3.
+    #
+    # cnpg-infra renders the same two values into every other repo in the
+    # org (scripts/render-gitvote-config.sh); this file is hand-maintained,
+    # so the two have to be changed together.
+    pass_threshold: 50.01
 
     # Allowed voters (optional)
     #
@@ -197,7 +215,7 @@ profiles:
   #
   governance:
     duration: 2w
-    pass_threshold: 66
+    pass_threshold: 66.66
     close_on_passing: true
     # Held open for a week even once it would pass, so the amendment is
     # actually circulated for comment before it's adopted (see
@@ -214,7 +232,7 @@ profiles:
   # removal backstop, and everything else Steering owns by lazy
   # consensus falling back to simple majority, see GOVERNANCE.md's
   # Voting section) doesn't need its own profile; the `default` profile
-  # above already has pass_threshold: 50 and allowed_voters.teams:
+  # above already has pass_threshold: 50.01 and allowed_voters.teams:
   # [steering-committee], invoked with plain `/vote`.
   #
   # The `governance` profile above is the ⅔ bar. It covers amending
@@ -236,7 +254,7 @@ profiles:
   # committee membership section); both use this same rule.
   core:
     duration: 2w
-    pass_threshold: 50
+    pass_threshold: 50.01
     close_on_passing: true
     announcements:
       discussions:
@@ -247,7 +265,7 @@ profiles:
 
   supply-chain:
     duration: 2w
-    pass_threshold: 50
+    pass_threshold: 50.01
     close_on_passing: true
     announcements:
       discussions:
@@ -258,7 +276,7 @@ profiles:
 
   community-ecosystem:
     duration: 2w
-    pass_threshold: 50
+    pass_threshold: 50.01
     close_on_passing: true
     announcements:
       discussions:
@@ -269,7 +287,7 @@ profiles:
 
   extensibility:
     duration: 2w
-    pass_threshold: 50
+    pass_threshold: 50.01
     close_on_passing: true
     announcements:
       discussions:
@@ -288,7 +306,7 @@ profiles:
   # that section for the full removal process.
   core-removal:
     duration: 2w
-    pass_threshold: 66
+    pass_threshold: 66.66
     close_on_passing: true
     announcements:
       discussions:
@@ -299,7 +317,7 @@ profiles:
 
   supply-chain-removal:
     duration: 2w
-    pass_threshold: 66
+    pass_threshold: 66.66
     close_on_passing: true
     announcements:
       discussions:
@@ -310,7 +328,7 @@ profiles:
 
   community-ecosystem-removal:
     duration: 2w
-    pass_threshold: 66
+    pass_threshold: 66.66
     close_on_passing: true
     announcements:
       discussions:
@@ -321,7 +339,7 @@ profiles:
 
   extensibility-removal:
     duration: 2w
-    pass_threshold: 66
+    pass_threshold: 66.66
     close_on_passing: true
     announcements:
       discussions:
