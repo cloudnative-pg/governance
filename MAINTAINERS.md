@@ -28,16 +28,24 @@ intended end state: each committee is self-selecting from the established
 Component Owners of its own subproject's repositories, and the four are
 expected to diverge as those people are promoted into them. Two changes
 still to come are tracked publicly:
-[#68](https://github.com/cloudnative-pg/governance/issues/68) for
-org-balanced voting and the Steering seat mechanism, and
+[#70](https://github.com/cloudnative-pg/governance/issues/70) for actually
+seating the Steering Committee's target composition, now defined in
+GOVERNANCE.md (each subproject committee selecting its representative, and
+electing the Community Representative seats), and
 [#69](https://github.com/cloudnative-pg/governance/issues/69) for the
 pathway that brings maintainers from outside EDB onto these committees.
 
 ## Steering Committee
 
-Per [GOVERNANCE.md's Steering Committee section](GOVERNANCE.md#steering-committee),
-the Steering Committee is the group of CloudNativePG Maintainers, carried
-forward unchanged from before this restructuring:
+[GOVERNANCE.md's Steering Committee section](GOVERNANCE.md#steering-committee)
+now defines the Committee's target composition: 5–7 seats, one selected by
+each subproject's maintainer committee, plus 1 to 3 elected Community
+Representatives, capped at 2 seats per organization. That mechanism isn't
+seated yet (tracked in
+[#70](https://github.com/cloudnative-pg/governance/issues/70)); until the
+first selections and election are held, the roster below is the group of
+CloudNativePG Maintainers, carried forward unchanged from before this
+restructuring:
 
 | Last Name | First Name | Handle | Organization |
 | --- | --- | --- | --- |
@@ -146,7 +154,10 @@ employer is updated here within 30 days, per
 [CONTRIBUTOR_LADDER.md's Recording a Role Change](CONTRIBUTOR_LADDER.md#recording-a-role-change);
 "Independent" is written out in full for someone with no employer tied to
 their contribution, so an empty cell always means missing data rather
-than no affiliation.
+than no affiliation. This is the same LFID record that the Steering seat
+cap and org-balanced voting depend on; see
+[GOVERNANCE.md's Determining Organizational Affiliation section](GOVERNANCE.md#determining-organizational-affiliation)
+for why it must stay current.
 
 ## Emeritus Maintainers
 
