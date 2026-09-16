@@ -5,9 +5,10 @@ the responsibilities and privileges that come with each. Community members
 generally start at the first rung and advance as their involvement grows;
 existing contributors are happy to help newcomers climb it. The ladder is
 split at the top into per-subproject rungs, to match CloudNativePG's
-federated repository structure, before converging on the Steering Committee
-as the top rung; see [the note below](#steering-committee) for what's still
-open about how that seat is actually filled.
+federated repository structure. Steering Committee membership is covered too,
+but deliberately kept off the numbered climb; see
+[the note below](#steering-committee-a-representative-role-not-a-ladder-rung)
+for why.
 
 <!-- Adapted from the CNCF Contributor Ladder template, with one structural
      change: a per-subproject split in place of the template's single,
@@ -15,8 +16,9 @@ open about how that seat is actually filled.
 
 This document is owned by the [Steering Committee](GOVERNANCE.md#steering-committee):
 changes to the ladder's structure, requirements, or thresholds go through a
-Steering Committee vote, ⅔ majority (see
-[GOVERNANCE.md's Voting section](GOVERNANCE.md#voting)). Day-to-day
+Steering Committee vote, ⅔ majority, one vote per organization (see
+[GOVERNANCE.md's Voting section](GOVERNANCE.md#voting)), the same
+org-balanced bar as amending GOVERNANCE.md itself. Day-to-day
 promotions and removals under the rules below follow each tier's own
 process, unchanged.
 
@@ -27,7 +29,7 @@ process, unchanged.
 - [CNPG Organization Member](#cnpg-organization-member)
 - [Component Owner](#component-owner)
 - [Subproject Maintainer](#subproject-maintainer)
-- [Steering Committee](#steering-committee)
+- [Steering Committee: a representative role, not a ladder rung](#steering-committee-a-representative-role-not-a-ladder-rung)
 - [Recording a Role Change](#recording-a-role-change)
 - [Inactivity](#inactivity)
 - [Involuntary Removal](#involuntary-removal)
@@ -42,7 +44,7 @@ process, unchanged.
 | Reviewer | Named paths in one repository | Named individually on those paths, advisory | `Write` on the repository; GitHub cannot scope it to those paths | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
 | Component Owner | Whole repository | None individually; the `*` rule names the `<repo>-owners` team they belong to | `Write` on the repository | Repository's existing Component Owners, ⅔ majority (its subproject committee, below three named owners) | None |
 | Subproject Maintainer | Whole subproject | N/A (committee seat) | `Maintain` across the subproject's repositories, granted to the committee's GitHub team by `cnpg-infra` from each repository's subproject classification (see [subprojects/README.md](subprojects/README.md#github-teams)) | Self-selected by the committee, Steering oversight | None |
-| Steering Committee | Project-wide governance | N/A | Not a GitHub permission tier; the `steering-committee` team is the electorate for Steering-scoped `.gitvote.yml` profiles, not a repo-access grant (`Admin` on the org-control repos already comes from the Infrastructure Team, see [Infrastructure Administration](GOVERNANCE.md#infrastructure-administration)) | Open item, not yet defined (see the note below) | None yet |
+| Steering Committee | Project-wide governance | N/A | Not a GitHub permission tier; the `steering-committee` team is the electorate for Steering-scoped `.gitvote.yml` profiles, not a repo-access grant (`Admin` on the org-control repos already comes from the Infrastructure Team, see [Infrastructure Administration](GOVERNANCE.md#infrastructure-administration)) | Selected by a subproject's committee, or elected (Community Representative seats) | 2 seats per organization (see [GOVERNANCE.md's Organizational Cap Enforcement](GOVERNANCE.md#organizational-cap-enforcement)) |
 
 `CODEOWNERS` is not where any of this is decided. It is generated from
 [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra) and reflects
@@ -60,25 +62,25 @@ flowchart TD
     RV["Reviewer<br/><i>named on paths in CODEOWNERS,<br/>Write access</i>"]
     CO["Component Owner<br/><i>in the repo's owners team,<br/>Write access</i>"]
     SM["Subproject Maintainer<br/><i>committee seat,<br/>Maintain access subproject-wide</i>"]
-    SC["Steering Committee<br/><i>project-wide governance,<br/>seat mechanism not yet defined</i>"]
+    SC["Steering Committee<br/><i>project-wide governance,<br/>5-7 seats, max 2 per organization</i>"]
 
     CP --> CT
     CT -->|"repo's Component Owners<br/>simple majority"| RV
     CT -->|"repo's Component Owners<br/>⅔ majority"| CO
     RV -->|"repo's Component Owners<br/>⅔ majority"| CO
     CO -->|"subproject committee<br/>self-selects, simple majority"| SM
-    SM -.->|"not yet defined"| SC
+    SM -.->|"selected as subproject's<br/>representative"| SC
 
     OM["CNPG Organization Member<br/><i>anyone holding Component Owner<br/>status or above, on any repository</i>"]
     CO -.- OM
     SM -.- OM
+    OM -.->|"electorate for Community<br/>Representative seats"| SC
 
     classDef rung fill:#eef4ff,stroke:#3b6fd6,stroke-width:1px,color:#1a1a1a;
     classDef open fill:#fff4e0,stroke:#c9822a,stroke-width:2px,stroke-dasharray:4 3,color:#1a1a1a;
     classDef note fill:#f5f5f5,stroke:#999999,stroke-width:1px,color:#333333;
 
-    class CP,CT,RV,CO,SM rung;
-    class SC open;
+    class CP,CT,RV,CO,SM,SC rung;
     class OM note;
 ```
 
@@ -164,7 +166,10 @@ every path, so a Reviewer is always requested and never blocking.
 
 "CloudNativePG Organization Member" (**CNPG Organization Member** for
 short) is not a separate promotion tier; it's the umbrella term for anyone
-holding Component Owner status or above, on any repository.
+holding Component Owner status or above, on any repository, used
+wherever a rule needs to name a broad electorate, most notably
+org-balanced voting and Steering Community Representative elections (see
+[GOVERNANCE.md's Organization-level decisions section](GOVERNANCE.md#organization-level-decisions)).
 [Reviewers](#reviewer) are not included despite holding `Write`: the term
 marks authority over a component, not access to one. The "CNPG"
 qualifier is deliberate: plain "organization" is used throughout these
@@ -174,7 +179,10 @@ should never be confused with that.
 Every CNPG Organization Member must hold a Linux Foundation ID (LFID) with
 their GitHub account linked to it and their current employer recorded on
 it. That link is what lets any counting of organizational balance work at
-all: without it a GitHub handle maps to no organization. A nomination to
+all, including the Steering seat cap and org-balanced voting (see
+[GOVERNANCE.md's Determining Organizational Affiliation section](GOVERNANCE.md#determining-organizational-affiliation)
+for why this matters and what breaks if it drifts): without it a GitHub
+handle maps to no organization. A nomination to
 Component Owner collects the LFID profile up front; Component Owners named
 before that requirement existed are asked to link one, and a missing link
 is a gap to close, not a reason to drop anyone.
@@ -306,32 +314,37 @@ current committee rosters.
   Steering Committee oversight (see
   [GOVERNANCE.md's Changes in subproject maintainer committee membership](GOVERNANCE.md#changes-in-subproject-maintainer-committee-membership)).
 
-## Steering Committee
+## Steering Committee: a representative role, not a ladder rung
 
-The Steering Committee holds project-wide governance authority, sitting
-above the per-subproject climb below it (see
-[GOVERNANCE.md's Steering Committee section](GOVERNANCE.md#steering-committee)
-for its duties and decision-making). Today it's simply the group of
-Maintainers listed in [MAINTAINERS.md](MAINTAINERS.md).
+The rungs above are a merit climb: more contribution and trust earn more
+access. Steering Committee membership doesn't work that way, so it isn't
+listed as a rung here. A seat is filled by a subproject maintainer committee
+*selecting* its representative, or by an org-wide election for the Community
+Representative seats (see
+[GOVERNANCE.md's Steering Committee section](GOVERNANCE.md#steering-committee)).
+It's a representative function, not something an individual climbs to by
+accumulating enough Subproject Maintainer-level contribution. Presenting it
+as a normal ladder rung would misleadingly imply that contributing enough as
+a Maintainer guarantees eventual Steering membership, which isn't how the
+model works.
 
-- Requirements: today, membership in the existing Maintainers group (see
-  [MAINTAINERS.md](MAINTAINERS.md)). A requirement tied to Subproject
-  Maintainer standing is expected once the seat mechanism below is
-  defined.
+- Requirements: an established Subproject Maintainer, for a subproject's
+  representative seat; any CNPG Organization Member, for a Community
+  Representative seat (see
+  [GOVERNANCE.md's Steering Committee Elections section](GOVERNANCE.md#steering-committee-elections)).
 - Responsibilities: the project-wide duties in
   [GOVERNANCE.md's Steering Committee Duties section](GOVERNANCE.md#steering-committee-duties).
 - Privileges: project-wide governance authority; `Admin` on the
   org-control repos comes from the Infrastructure Team (see
   [Infrastructure Administration](GOVERNANCE.md#infrastructure-administration)),
   not as a consequence of this rung.
-- Promotion: **open item**, tracked in
-  [cloudnative-pg/governance#68](https://github.com/cloudnative-pg/governance/issues/68).
-  How many seats, any per-organisation cap, and how each seat is actually
-  filled (for example, each subproject committee selecting a
-  representative, plus elected Community Representatives) isn't defined
-  in [GOVERNANCE.md](GOVERNANCE.md) yet. Until that's drafted and
-  ratified, Steering membership stays today's Maintainers list, not
-  something reached by climbing the rungs below.
+- Promotion: a subproject-selected seat is filled by that subproject's own
+  maintainer committee, simple majority, per person; a Community
+  Representative seat is filled by annual, org-balanced election among all
+  CNPG Organization Members (see
+  [GOVERNANCE.md's Steering Committee Elections section](GOVERNANCE.md#steering-committee-elections)).
+  No single organization may hold more than 2 of the 5-7 seats (see
+  [GOVERNANCE.md's Organizational Cap Enforcement](GOVERNANCE.md#organizational-cap-enforcement)).
 
 ### Worked Example
 
@@ -340,8 +353,20 @@ Maintainers listed in [MAINTAINERS.md](MAINTAINERS.md).
 > Maintainer Committee, so they have technical authority over every
 > component in that subproject (`docs`, `cloudnative-pg.github.io`,
 > `cnpg-playground`, `webtest`, `grafana-dashboards`); Ben's authority
-> stays scoped to `docs` alone. (That committee seat doesn't carry
-> Steering membership automatically — see Promotion above.)
+> stays scoped to `docs` alone.
+>
+> The Community, Docs & Ecosystem committee selects Cleo, simple majority,
+> per person, to represent the subproject on the Steering Committee (see
+> [Subproject-level decisions](GOVERNANCE.md#subproject-level-decisions)).
+> That vote is internal to the committee: Ben has no say in it, and no
+> organizational cap applies.
+>
+> The organizational cap does apply to a different seat: once a year, Ana,
+> Ben, and Cleo, as CNPG Organization Members, each get a ranked ballot for
+> the Community Representative seat(s), one vote per organization (see
+> [Community Representative Election Process](GOVERNANCE.md#community-representative-election-process)).
+> That election, not the selection of a subproject's own representative, is
+> the org-balanced one.
 
 ## Recording a Role Change
 
