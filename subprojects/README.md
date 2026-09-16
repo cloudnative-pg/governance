@@ -85,7 +85,7 @@ a subproject rolls out.
 | :---- | :---- | :---- |
 | `<repo>-owners` (existing, per repository, e.g. `governance-owners`) | That repository's real `CODEOWNERS` owners, managed via `cnpg-infra` | Repository-scoped, per `cnpg-infra`'s `repo-tiers.yaml` |
 | `admins` (existing) | Infrastructure Team, delegated by Steering (see [GOVERNANCE.md's Infrastructure Administration section](../GOVERNANCE.md#infrastructure-administration)) | `Admin` on every repository |
-| `steering-committee` | Steering Committee | No repo access of its own; Admin on the org-control repos already comes from `admins` above. Its role is being the electorate for Steering-scoped [`.gitvote.yml`](../.gitvote.yml) profiles (`default`, `governance`) |
+| `steering-committee` | Steering Committee | No repo access of its own; Admin on the org-control repos already comes from `admins` above. Its role is being the electorate for Steering-scoped [`.gitvote.yml`](../.gitvote.yml) profiles (`default`, `governance`). Those count individuals, so for org-balanced decisions the posted organizational tally is the result of record (see [GOVERNANCE.md](../GOVERNANCE.md#organization-level-decisions)) |
 | `core-maintainers` | Core committee | `Maintain` on the [Core](core.md) repositories; `Write` on this repo, so its `CODEOWNERS` line is honored |
 | `supply-chain-maintainers` | Supply Chain committee | `Maintain` on the [Supply Chain](supply-chain.md) repositories; `Write` on this repo, so its `CODEOWNERS` line is honored |
 | `community-ecosystem-maintainers` | Community, Docs & Ecosystem committee | `Maintain` on the [Community, Docs & Ecosystem](community-ecosystem.md) repositories; `Write` on this repo, so its `CODEOWNERS` line is honored |
@@ -125,7 +125,10 @@ owners see who's on which team.
 Slack channel names are the corresponding GitHub team name above, prefixed
 with `cloudnativepg-` (e.g. `core-maintainers` the team,
 `cloudnativepg-core-maintainers` the channel), so a GitHub team and its
-Slack channel map onto each other without guessing.
+Slack channel map onto each other without guessing. The two delegated teams
+are the exception, named after the body as it appears in
+[MAINTAINERS.md](../MAINTAINERS.md): the Infrastructure Team's GitHub team
+is the less descriptive `admins`, and the Security Response Team has none.
 
 | Channel | Maps to |
 | :---- | :---- |
@@ -133,7 +136,9 @@ Slack channel map onto each other without guessing.
 | `cloudnativepg-supply-chain-maintainers` | Supply Chain committee |
 | `cloudnativepg-community-ecosystem-maintainers` | Community, Docs & Ecosystem committee |
 | `cloudnativepg-extensibility-maintainers` | Extensibility committee |
-| `cloudnativepg-steering-committee` | Steering Committee (security response and CoC ratification are discussed here) |
+| `cloudnativepg-security-response-team` | Security Response Team (embargoed security reports are discussed here; membership must equal that roster exactly) |
+| `cloudnativepg-infrastructure-team` | Infrastructure Team (`admins`; infrastructure and credential matters) |
+| `cloudnativepg-steering-committee` | Steering Committee (CoC ratification is discussed here; embargoed security reports are not, since the Security Response Team is a separate roster, see [GOVERNANCE.md](../GOVERNANCE.md#security-response-team)) |
 
 All of these channels are private, so channel membership is no more visible
 to the public than a GitHub Team is. MAINTAINERS.md stays the document of

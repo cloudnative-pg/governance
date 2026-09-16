@@ -21,8 +21,9 @@ body:
         If you select "None of these" below, the proposal fits no
         existing subproject and is escalated to the Steering Committee as
         a request to add a new one instead: proposed by a Steering
-        Committee member, ⅔ majority, per person, run with
-        `/vote-governance`. See
+        Committee member, ⅔ majority, one vote per organization (the
+        organizational tally is posted by hand, since GitVote counts
+        individuals), run with `/vote-governance`. See
         [GOVERNANCE.md's Adding New Subprojects section](https://github.com/cloudnative-pg/governance/blob/main/GOVERNANCE.md#adding-new-subprojects).
   - type: input
     id: repo-name
