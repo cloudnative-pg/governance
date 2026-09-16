@@ -26,8 +26,26 @@
 #       profile: default
 #
 # Amending GOVERNANCE.md or CONTRIBUTOR_LADDER.md is a ⅔ Steering
-# Committee decision (see GOVERNANCE.md's Amendments and Voting
-# sections). Both are amended by pull request, so the vote runs on the
+# Committee decision, one vote per organization (see GOVERNANCE.md's
+# Amendments and Voting sections). GitVote counts individuals, so the
+# vote opened here is the venue and the per-person signal; the
+# organizational tally that decides it is posted by whoever called the
+# vote, and it, not this tool's percentage, is what must pass before
+# the PR is merged.
+#
+# Example: a ⅔ amendment vote on a seven-member Steering Committee.
+# GitVote reports 5 of 7 in favor, 71%, above its bar. By organization:
+#
+#   EDB (2 members)  both in favor           -> for
+#   Org B (2)        one for, one against    -> cannot agree, abstains
+#   Org C (2)        both in favor           -> for
+#   Org D (1)        against                 -> against
+#
+# The tally posted on the PR reads: "EDB: for. Org B: abstain. Org C: for.
+# Org D: against. 2 of 4 organizations in favor, below ⅔, not passed."
+# The PR must not be merged despite GitVote's 71%.
+#
+# Those two files are amended by pull request, so the vote runs on the
 # PR itself and is opened automatically here: the diff is the proposal,
 # and a governance change can't be merged without a vote having been
 # called on it. Every other decision in GOVERNANCE.md is raised as an
@@ -238,10 +256,11 @@ profiles:
   # The `governance` profile above is the ⅔ bar. It covers amending
   # GOVERNANCE.md or CONTRIBUTOR_LADDER.md (opened automatically, see
   # the automation block at the top of this file) and adding or removing
-  # a subproject, which carries the same bar because each subproject is
-  # expected to hold a seat on the Steering Committee once the
-  # seat-selection mechanism is ratified: it changes Steering's own
-  # future composition, not just the repository listing. A MAINTAINERS.md
+  # a subproject, which carries the same bar because each subproject holds
+  # a seat on the Steering Committee: it changes Steering's own
+  # composition, not just the repository listing. Both are org-balanced in
+  # GOVERNANCE.md, so this profile's percentage is a per-person signal and
+  # the posted organizational tally decides. A MAINTAINERS.md
   # roster change is not on this list; it records a decision already
   # taken at that committee's own threshold.
 
