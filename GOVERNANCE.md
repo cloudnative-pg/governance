@@ -213,9 +213,13 @@ Where the repository already has its own contributor base (e.g. an
 existing external project), they hold an internal consensus vote to join
 CloudNativePG before this proposal is opened.
 
-The proposal is presented at the first available community meeting and
-added to its agenda for open discussion (see [Meetings](#meetings)). The
-target subproject's maintainer committee then reviews and decides by the
+An external contribution, whether or not it already has a codebase, is
+presented at the first available community meeting and added to its
+agenda for open discussion (see [Meetings](#meetings)) before the vote
+below. A subproject's own maintainer committee proposing a wholly new,
+empty repository for its own tooling has no external contributor or
+codebase to discuss, so it skips straight to that vote. The target
+subproject's maintainer committee then reviews and decides by the
 same simple-majority, per-person vote it uses for its own membership (see
 [Changes in subproject maintainer committee membership](#changes-in-subproject-maintainer-committee-membership));
 a proposal is only accepted once the committee has confirmed the
