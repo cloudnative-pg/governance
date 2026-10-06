@@ -54,6 +54,7 @@ being reused across several, so it sits with that plugin under
 | Repository | Description |
 | --- | --- |
 | [daggerverse](https://github.com/cloudnative-pg/daggerverse) | Dagger modules for portable CI/CD workflows. |
+| [ci-machinery](https://github.com/cloudnative-pg/ci-machinery) | CI/CD machinery and automation library for CloudNativePG projects. |
 
 > `cnpg-template` used to be listed here. It's now classified as
 > org-control infrastructure administered directly by the Steering
