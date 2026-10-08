@@ -534,7 +534,7 @@ two rungs below Subproject Maintainer.
 
 Three roles sit below Subproject Maintainer on the ladder: a Contributor
 adds value without a defined area of ownership, a Reviewer is trusted with
-review of named paths within one component, and a Component Owner owns an
+review within one component, optionally of named paths, and a Component Owner owns an
 entire component. Their requirements, promotion process, and GitHub
 access are defined in [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md), not
 here, to avoid keeping the same rules in two places. Component Owners are

@@ -39,7 +39,7 @@ process, unchanged.
 | --- | --- | --- | --- | --- | --- |
 | Community Participant | None | None | None | N/A | None |
 | Contributor | None (recognition only) | None | None | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
-| Reviewer | Named paths in one repository | Named individually on those paths, advisory | `Write` on the repository; GitHub cannot scope it to those paths | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
+| Reviewer | One repository, optionally named paths | Optional: may be named individually on paths, advisory | `Write` on the repository; GitHub cannot scope it to those paths | Repository's existing Component Owners, simple majority (its subproject committee, if none are named) | None |
 | Component Owner | Whole repository | None individually; the `*` rule names the `<repo>-owners` team they belong to | `Write` on the repository | Repository's existing Component Owners, ⅔ majority (its subproject committee, below three named owners) | None |
 | Subproject Maintainer | Whole subproject | N/A (committee seat) | `Maintain` across the subproject's repositories, granted to the committee's GitHub team by `cnpg-infra` from each repository's subproject classification (see [subprojects/README.md](subprojects/README.md#github-teams)) | Self-selected by the committee, Steering oversight | None |
 | Steering Committee | Project-wide governance | N/A | Not a GitHub permission tier; the `steering-committee` team is the electorate for Steering-scoped `.gitvote.yml` profiles, not a repo-access grant (`Admin` on the org-control repos already comes from the Infrastructure Team, see [Infrastructure Administration](GOVERNANCE.md#infrastructure-administration)) | Open item, not yet defined (see the note below) | None yet |
@@ -48,16 +48,17 @@ process, unchanged.
 [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra) and reflects
 two different things: **a team named there means ownership**, via the
 `<repo>-owners` team the `*` rule points at, and **an individual named
-there means review** of the paths that name them. Ownership itself is
-recorded in `repo-tiers.yaml` and published in each repository's
-`COMPONENT_OWNERS.md`; no Component Owner appears in `CODEOWNERS` by
-name.
+there routes review** of the paths that name them. Ownership and the
+Reviewer rung are both recorded in `repo-tiers.yaml` and published in each
+repository's `COMPONENT_OWNERS.md`; no Component Owner appears in
+`CODEOWNERS` by name, and a Reviewer appears there only if they were given
+paths.
 
 ```mermaid
 flowchart TD
     CP["Community Participant<br/><i>engages, no formal tier</i>"]
     CT["Contributor<br/><i>recognized contribution,<br/>no repository access</i>"]
-    RV["Reviewer<br/><i>named on paths in CODEOWNERS,<br/>Write access</i>"]
+    RV["Reviewer<br/><i>trusted with review,<br/>Write access</i>"]
     CO["Component Owner<br/><i>in the repo's owners team,<br/>Write access</i>"]
     SM["Subproject Maintainer<br/><i>committee seat,<br/>Maintain access subproject-wide</i>"]
     SC["Steering Committee<br/><i>project-wide governance,<br/>seat mechanism not yet defined</i>"]
@@ -127,19 +128,21 @@ metrics threshold.
 
 ## Reviewer
 
-Reviewers are trusted with review of part of a repository: a directory, a
-subsystem, a set of files. They are named individually on those paths in
-that repository's `CODEOWNERS`, so GitHub requests them automatically on
-any pull request touching their area.
+Reviewers are trusted with review in a repository. They may be given one or
+more paths, such as a directory, a subsystem or a set of files, in which
+case they are named individually on those paths in that repository's
+`CODEOWNERS` and GitHub requests them automatically on any pull request
+touching their area. Naming paths is optional: a Reviewer with none is
+trusted to review the repository on request.
 
 - Requirements: an established Contributor with a track record in the area
   being proposed for.
 - Responsibilities: review what you are named on within a reasonable time,
   or say when you cannot. [Inactivity](#inactivity) applies to this rung
   like any other.
-- Privileges: named on those paths in `CODEOWNERS`; `Write` on that one
-  repository; listed in its `COMPONENT_OWNERS.md` under Reviewers;
-  eligible to be proposed for Component Owner.
+- Privileges: `Write` on that one repository; listed in its
+  `COMPONENT_OWNERS.md` under Reviewers; named on any paths they were given
+  in `CODEOWNERS`; eligible to be proposed for Component Owner.
 - Not conferred: organization membership, or
   [CNPG Organization Member](#cnpg-organization-member) status. `Write` is
   granted on that repository alone and can be held as a direct
@@ -153,12 +156,13 @@ any pull request touching their area.
 > GitHub grants permissions per repository, never per path, and ignores a
 > `CODEOWNERS` entry for anyone without `Write`. A Reviewer therefore holds
 > the same repository-wide permission a Component Owner does, including the
-> ability to merge a pull request that has met its requirements; the named
+> ability to merge a pull request that has met its requirements; any named
 > paths are what the project asks of them, not a boundary GitHub enforces.
 > The branch ruleset's approvals and checks apply to them as to anyone.
 
-Being named on a path is advisory: the repository's owners are co-owners of
-every path, so a Reviewer is always requested and never blocking.
+Being named on a path is optional and advisory: the repository's owners are
+co-owners of every path, so a Reviewer is always requested and never
+blocking.
 
 ## CNPG Organization Member
 
@@ -249,11 +253,12 @@ own repository.
 > therefore describes a rung above Contributor rather than a way of
 > involving one.
 >
-> That is what the [Reviewer](#reviewer) rung is: the people named on
-> paths. It exists in fact today, five of them across `cloudnative-pg`,
+> The [Reviewer](#reviewer) rung covers those people. It existed in fact
+> before it had a name, as individuals named on paths in `cloudnative-pg`,
 > `postgres-extensions-containers` and `klio`, each with `Write` granted by
-> hand and recorded in no policy file; naming the rung is what brings that
-> access under the same management as everything else.
+> hand and recorded in no policy file; naming the rung brings that access
+> under the same management as everything else. Being named on a path is not
+> what makes someone a Reviewer, and a Reviewer needs no path.
 
 - Path onward: Component Owners of repositories within a formalized
   subproject are expected to become members of that subproject's maintainer
@@ -352,7 +357,7 @@ recorded, so GitHub access and the public record match the decision.
 | Tier | Recorded in |
 | --- | --- |
 | Contributor | That repository's `CONTRIBUTORS.md`, generated from [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s `repo-tiers.yaml` (`contributors:`) |
-| Reviewer | That repository's `COMPONENT_OWNERS.md` under Reviewers, the paths naming them in its `CODEOWNERS`, and a `Write` grant on that repository alone, held directly rather than through a team, since the rung implies no organization membership. All three come from one entry in [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s `repo-tiers.yaml` |
+| Reviewer | That repository's `COMPONENT_OWNERS.md` under Reviewers, and a `Write` grant on that repository alone, held directly rather than through a team, since the rung implies no organization membership. Both come from one entry in [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s `repo-tiers.yaml` (`reviewers:`); any paths naming them in its `CODEOWNERS` are optional |
 | Component Owner | That repository's `COMPONENT_OWNERS.md`, and its `<repo>-owners` GitHub team membership (see [subprojects/README.md's GitHub Teams section](subprojects/README.md#github-teams)); both are generated from one entry in [`cnpg-infra`](https://github.com/cloudnative-pg/cnpg-infra)'s `repo-tiers.yaml`, so recording the vote there does both |
 | Subproject Maintainer | [MAINTAINERS.md](MAINTAINERS.md) committee roster; `subproject-*` GitHub team membership (see [GitHub Teams](GOVERNANCE.md#github-teams-and-communication-channels)) |
 | Steering Committee | [MAINTAINERS.md](MAINTAINERS.md) Steering Committee table; `steering-committee` GitHub team membership |
