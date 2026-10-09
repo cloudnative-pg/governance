@@ -68,21 +68,28 @@ CloudNativePG separates **governance authority** from **technical authority**:
 
 - The **Steering Committee** owns project-wide governance: vision, the CNCF
   interface, adding/removing subprojects, subproject maintainer committee
-  oversight, security response coordination, and changes to this document
-  (see [Steering Committee](#steering-committee) below for composition and
-  voting, including its backstop role for a subproject maintainer
-  committee).
+  oversight, security response coordination, and changes to this document.
+  It has 5–7 seats, capped at **2 per organization**, the mechanism that
+  keeps governance authority from concentrating in one company (see
+  [Organizational Cap Enforcement](#organizational-cap-enforcement)). Its
+  foundational decisions are org-balanced; its day-to-day business,
+  including acting as backstop for a subproject maintainer committee, is
+  decided like any committee's, per person. See [Voting](#voting) for the
+  full split.
 - **Subproject Maintainer Committees** own technical authority within their
   subproject: code review, merge, release, and day-to-day decisions by lazy
   consensus. Technical decisions stay per-person, regardless of
   organization.
 
+This split exists so that organizational diversity in governance does not come
+at the expense of the deep technical expertise that got CloudNativePG here.
 See [Voting](#voting) for exactly which decisions use which mechanism.
 
 ```mermaid
 flowchart TD
-    subgraph GOV["Governance authority"]
-        SC["Steering Committee<br/>(today's Maintainers, see MAINTAINERS.md)"]
+    subgraph GOV["Governance authority (org-balanced)"]
+        SC["Steering Committee<br/>5-7 seats, max 2 per organization"]
+        CR["Community Representative seat(s)<br/>1-3, elected annually by all<br/>CNPG Organization Members"]
     end
 
     subgraph TECH["Technical authority (per person)"]
@@ -105,6 +112,12 @@ flowchart TD
     GREPO[("governance, .project, .github,<br/>cnpg-infra, cnpg-template<br/>administered directly by Steering,<br/>not part of any subproject")]
     SC --> GREPO
 
+    CPC ==>|selects representative| SC
+    SUC ==>|selects representative| SC
+    CDC ==>|selects representative| SC
+    EXC ==>|selects representative| SC
+    CR -.-> SC
+
     SC -.->|"backstop: removes a stuck<br/>committee member,<br/>simple majority, per person"| CPC
     SC -.-> SUC
     SC -.-> CDC
@@ -119,7 +132,7 @@ flowchart TD
     classDef committee fill:#eef4ff,stroke:#3b6fd6,stroke-width:1px,color:#1a1a1a;
     classDef repo fill:#eef9ee,stroke:#3a8a4d,stroke-width:1px,color:#1a1a1a;
 
-    class SC gov;
+    class SC,CR gov;
     class CPC,SUC,CDC,EXC committee;
     class CPR,SUR,CDR,EXR,GREPO repo;
 ```
@@ -154,7 +167,7 @@ progression.
 > **Example:** Ana, Ben, and Cleo are Component Owners of `docs`. Ana and
 > Cleo are also on the Community, Docs & Ecosystem Maintainer Committee,
 > which gives them (not Ben) authority across every component in that
-> subproject. See
+> subproject and a say in selecting its Steering representative. See
 > [CONTRIBUTOR_LADDER.md's worked example](CONTRIBUTOR_LADDER.md#worked-example)
 > for the full walk-through.
 
@@ -286,6 +299,7 @@ Each subproject has its own maintainer committee, responsible for:
 - Supporting the Code of Conduct within the subproject and referring
   violations to the addresses in [Code of Conduct](#code-of-conduct),
   rather than handling them within the committee
+- Selecting the subproject's representative to the Steering Committee
 - Regularly attending the project's recurring community meetings
 - Periodically attending Steering Committee meetings to provide input, when
   invited or when subproject business is on the agenda
@@ -355,34 +369,55 @@ committee is formalized, are operational detail kept in
 
 ## Steering Committee
 
-The Steering Committee holds project-wide governance authority. It does not
-replace the technical authority of subproject maintainer committees; it
-exists to hold vision, CNCF relations, and cross-project decisions at a
-level above any one subproject.
+The Steering Committee holds project-wide governance authority. **No single
+organization may hold more than 2 of its 5–7 seats**: that cap is the
+central structural safeguard of this entire committee, not a footnote (see
+[Organizational Cap Enforcement](#organizational-cap-enforcement) for exactly
+how it's enforced at election, at selection, and after the fact). The
+Committee does not replace the technical authority of subproject maintainer
+committees; it exists to ensure that authority over vision, CNCF relations,
+and cross-project decisions is not concentrated in a single organization.
 
-**Composition:** the Steering Committee is, for now, the group of
-Maintainers listed in [MAINTAINERS.md](MAINTAINERS.md), deciding by
-per-person vote uncapped by organization; moving to an org-balanced,
-seat-capped model is tracked in
-[cloudnative-pg/governance#68](https://github.com/cloudnative-pg/governance/issues/68).
+**Structure:** 5–7 seats. No single organization may hold more than 2 seats,
+regardless of how many of its employees serve across subproject maintainer
+committees. Seats serve 2-year staggered terms.
+
+Only elected (Community Representative) seats carry a fixed term; a
+subproject-selected seat's tenure is up to that committee (see
+[Changes in Steering Committee composition](#changes-in-steering-committee-composition)),
+so a mid-term representative swap there doesn't affect any stagger. See
+[Bootstrap Composition](#bootstrap-composition) for how the Committee is
+first seated and how the stagger gets started.
+
 Members are expected to represent CloudNativePG as a whole rather than
 their own subproject or employer, and to deal with other participants
 professionally and in keeping with the Code of Conduct.
 
+**Composition:**
+
+- One representative selected by each subproject's maintainer committee (see
+  [Individual Subproject Governance](#individual-subproject-governance))
+- One to three Community Representatives, elected annually by all
+  [CNPG Organization Members](CONTRIBUTOR_LADDER.md#cnpg-organization-member)
+  across all subprojects (4 subproject seats plus 1 to 3 Community
+  Representative seats span the 5-7 total; see
+  [Bootstrap Composition](#bootstrap-composition) for how many of the
+  three seats are open in a given cycle)
+
 ### Steering Committee Duties
 
-**The Steering Committee owns**, decided per [Voting](#voting) (lazy
-consensus, falling back to a simple majority per person, except where
-noted otherwise below):
+**The Steering Committee owns:**
 
+- **Foundational** (org-balanced, see [Organization-level decisions](#organization-level-decisions)):
   - Curating and proposing changes to this document, ratified by the Steering
-    Committee itself, ⅔ majority per person (see [Voting](#voting))
+    Committee itself
   - Ownership of [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md): the ladder's
     structure, promotion criteria, and any numeric thresholds are a Steering
     Committee decision. Advancement itself is not: every promotion is decided
     per repository or per committee, by the bodies the ladder names
   - Reviewing and deciding on new subprojects to add; removing subprojects
     that have become inactive
+- **Standard duties** (day-to-day, per person, see [Voting](#voting)):
   - Project vision and strategic direction
   - The CNCF interface: due diligence responses, public comment, foundation
     communications, and organizing participation in CNCF/LFX programs (for
@@ -422,6 +457,144 @@ maintainer committees for:
   [Voting](#voting) for what "lazy consensus" means); subproject-wide
   decisions spanning multiple components follow the same principle at the
   subproject committee level
+
+### Steering Committee Elections
+
+#### Changes in Steering Committee composition
+
+A subproject maintainer committee may replace its Steering representative at
+any time by simple majority of that committee, per person, uncapped by
+organization. Community Representative seats are filled by annual election,
+one vote per organization among all
+[CNPG Organization Members](CONTRIBUTOR_LADDER.md#cnpg-organization-member)
+across subprojects (see [Voting](#voting)); the nomination, election, and
+vacancy mechanics are set out below.
+
+#### Bootstrap Composition
+
+At the first election, the Steering Committee is seeded close to its full
+size rather than phased in gradually: all four subprojects select their
+representative as usual, and the Community Representative election opens
+2 of its 3 seats, for 6 of the eventual 5-7 seats from day one. The 3rd
+Community Representative seat, and any subproject reselection, follow the
+normal process from year 2 onward (see
+[Community Representative Election Process](#community-representative-election-process)
+below).
+
+Whoever holds a seat at bootstrap serves that seat's normal tenure (up to
+the subproject committee, for a subproject-selected seat; 2 years, for an
+elected Community Representative seat) unless they are one of the
+existing (pre-restructuring) CloudNativePG Maintainers, in which case
+they serve an initial 1-year term and then step down. That seat is then
+filled through the normal process for its type (a fresh subproject
+selection, or the next Community Representative election), with no
+reservation for or against any particular affiliation; the
+[Organizational Cap Enforcement](#organizational-cap-enforcement) rules
+are the only constraint. This keeps the bootstrap committee from locking
+in pre-restructuring continuity indefinitely, without needing to fix in
+advance how many of the initial seats an existing Maintainer actually
+ends up holding.
+
+From year 2 on, how many Community Representative seats are open each
+cycle isn't a separate decision: it's simply whichever seats reach the
+end of their term that year.
+
+#### Community Representative Election Process
+
+Each organization casts one ranked ballot, reflecting the internally
+coordinated preference of its own
+[CNPG Organization Members](CONTRIBUTOR_LADDER.md#cnpg-organization-member);
+unaffiliated individuals each cast their own ranked ballot, consistent with
+the org-balanced mechanism this decision already uses (see
+[Organization-level decisions](#organization-level-decisions)).
+
+Once a year, the outgoing Steering Committee appoints two or three
+**Election Officers** to run the election: CNPG Organization Members in
+good standing, not themselves candidates, drawn from more than one
+organization. Officers maintain the eligible-voter list, publish
+announcements, and conduct the vote.
+
+- **Nomination:** the outgoing Steering Committee opens a public GitHub
+  Discussion in the [governance repository](https://github.com/cloudnative-pg/governance)
+  at the start of the annual election window, open to every CNPG
+  Organization Member across every subproject, stating how many of the one
+  to three Community Representative seats (see
+  [Bootstrap Composition](#bootstrap-composition) above) are open for
+  that cycle. Any CNPG Organization
+  Member may nominate up to two candidates there, including themselves. A
+  candidate does not need to be a CNPG Organization Member to be
+  nominated, but must accept the nomination and be endorsed by CNPG
+  Organization Members from two different organizations, in the same
+  discussion, before appearing on the ballot.
+- **Election:** seats are filled by ranked-choice voting (a Condorcet or
+  instant-runoff method, run on an open ranked-choice tool such as
+  [CIVS](https://civs1.civs.us/)), one ballot per eligible voter as defined
+  above. The top vote-getters, up to the number of open seats, are elected,
+  subject to [organizational cap enforcement](#organizational-cap-enforcement)
+  below.
+- **Vacancy:** a seat vacated mid-term goes to the next-highest-ranked
+  candidate from that seat's original election. If no candidate remains, a
+  special election is called using the same electorate as the original
+  election; eligibility isn't redetermined. The winner serves out the
+  remainder of the vacated term.
+
+<!-- Nomination/election/vacancy mechanics adapted from Crossplane's
+     GOVERNANCE.md, a graduated CNCF project with a similar Steering model. -->
+
+#### Organizational Cap Enforcement
+
+No single organization may hold more than 2 of the 5-7 Steering seats,
+counting committee-selected and elected seats together. Unlike Crossplane's
+version of this cap, which only binds once its initial terms expire, CNPG's
+cap is enforced from the Steering Committee's very first appointment: the
+purpose of this restructuring is to end a single organization's implicit
+majority, so the cap cannot be allowed to lapse even temporarily at
+bootstrap.
+
+- **At an election:** if the ranked results would seat more than 2
+  representatives from one organization, the lowest-ranked candidate(s)
+  from the over-represented organization are skipped in favor of the
+  next-highest-ranked candidate from a different organization, repeated
+  until the cap is satisfied.
+- **At a subproject selection:** if a subproject maintainer committee's
+  choice of representative would breach the cap, the committee selects a
+  different representative instead; the cap constrains who a committee may
+  send, not whether it gets a seat.
+- **On an affiliation change after the fact** (an acquisition, a merger, or
+  a seat-holder changing employer): sufficient seat-holders from the
+  now-over-represented organization must resign until the cap is restored.
+  If the organization cannot agree who resigns, the question is decided by
+  a majority vote of the unaffected Steering Committee members. A vacated
+  elected seat is refilled per the vacancy rule above; a vacated
+  committee-selected seat is refilled by that subproject's committee
+  selecting a new representative.
+
+#### Determining Organizational Affiliation
+
+The 2-per-organization Steering cap, org-balanced voting (see
+[Organization-level decisions](#organization-level-decisions)), and the
+affiliation-change rule just above all depend on knowing, reliably, which
+organization an individual actually belongs to. That determination
+is not self-reported: it is each individual's Linux Foundation ID (LFID),
+which every Maintainer, Component Owner, and Steering Committee member
+must hold and keep current with their correct, present employer. The LFID
+record lives in the [`.project`](https://github.com/cloudnative-pg/.project)
+repository's `maintainers.yaml`, the same record CNCF's own tooling reads;
+[MAINTAINERS.md](MAINTAINERS.md)'s Organization column is sourced from it,
+not entered independently, so the two are not two competing records to
+reconcile by hand. An LFID that lists the wrong company, or none at all,
+doesn't just miss a formality: it can silently understate an
+organization's real seat count and break the cap this section exists to
+enforce. Registering, or correcting, an LFID is therefore a precondition
+of holding a Steering seat or a Subproject Maintainer seat, or of casting
+an org-balanced vote as a [CNPG Organization Member](CONTRIBUTOR_LADDER.md#cnpg-organization-member),
+not paperwork to catch up on afterward.
+
+> [!IMPORTANT]
+> **Open item:** `.project`'s `maintainers.yaml` only lists GitHub handles
+> today: no LFID or organization populated yet, which is why several
+> [MAINTAINERS.md](MAINTAINERS.md) Organization cells are blank. Tracked as
+> a follow-up, not a blocker to ratifying this mechanism.
 
 ## Code of Conduct
 
@@ -482,11 +655,10 @@ Steering member can put it forward. The candidate should show:
 
 Before applying, the candidate's own contributors hold an internal
 consensus vote to join CloudNativePG. Steering then decides by ⅔
-majority, per person (see [Voting](#voting)), the same bar as amending
-this document, since each subproject is
-expected to hold its own Steering seat once the seat-selection mechanism
-is ratified ([#68](https://github.com/cloudnative-pg/governance/issues/68)).
-If accepted, Steering assigns one of
+majority, one vote per organization (see
+[Organization-level decisions](#organization-level-decisions)), the same
+bar as amending this document, since each subproject holds its own
+Steering seat once accepted. If accepted, Steering assigns one of
 its members to help the new subproject integrate (GitHub Teams,
 `CODEOWNERS`, its `subprojects/*.md` entry); as part of that integration,
 whoever holds rights to the candidate's code confirms they're in a
@@ -506,14 +678,24 @@ CloudNativePG has no separate namespace to move an entire subproject into.
 
 ## Amendments
 
-This document is amended by a ⅔ majority of the Steering Committee, per
-person (see [Voting](#voting) for the full decision-type table, including
-[CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md) and subproject changes).
-An amendment is proposed as a pull request against this repository, and
-the vote is held on that pull request, so the diff under discussion is
-the proposal itself. The vote stays open for at least one week even if it
-would already pass, so an amendment is genuinely circulated for comment
-before it's adopted.
+This document is amended by a ⅔ majority of the Steering Committee, one
+vote per organization (see
+[Organization-level decisions](#organization-level-decisions) for the full
+decision-type table, including [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md)
+and subproject changes). An amendment is proposed as a pull request
+against this repository, and the vote is held on that pull request, so
+the diff under discussion is the proposal itself. The vote stays open for
+at least one week even if it would already pass, so an amendment is
+genuinely circulated for comment before it's adopted.
+
+> [!IMPORTANT]
+> **Transition note:** this change, which introduces org-balanced voting
+> itself, is ratified under the prior rule instead (⅔ majority, per
+> person, the same rule the Steering Committee has used since it was
+> formed from the existing group of Maintainers): Steering's composition
+> doesn't yet have the org cap this change introduces, so a per-org tally
+> isn't meaningful for ratifying it. Every later governance change follows
+> the org-balanced mechanism above.
 
 Every change to this document is an amendment, including one that looks
 purely editorial: the vote opens on any pull request that touches it,
@@ -683,19 +865,39 @@ without a governance edit; the duration and early-closing behavior above
 are policy, not tied to any one tool, and the process as a whole is what's
 actually required.
 
-### Steering Committee decisions
+### Organization-level decisions
 
-Every Steering decision is per person, uncapped by organization, the same
-rule CloudNativePG has always used.
+These are Steering's foundational, constitutional-level decisions: the ones
+that shape the project's structure or Steering's own composition. They use
+**org-balanced voting**: each organization represented among the eligible
+voters casts one vote, regardless of how many individuals it has among
+those voters. If an organization has multiple eligible voters, those
+individuals coordinate internally and cast a single organizational vote;
+unaffiliated individuals each cast their own vote. The 2-per-organization
+seat cap on Steering limits how skewed its composition can get, but doesn't
+by itself make a per-seat vote balanced: an organization holding 2 seats
+would otherwise cast 2 votes to every other organization's 1. So these
+specific decisions are org-balanced rather than per-seat. Steering's other,
+day-to-day business (see [Subproject-level decisions](#subproject-level-decisions)
+below for the one example that recurs, backstopping a subproject maintainer
+committee) is decided the same way any committee decides routine business:
+lazy consensus, falling back to a plain per-person vote among Steering
+members.
 
 | Decision Type | Who Votes | Mechanism |
 | :---- | :---- | :---- |
-| Governance changes (this document, see [Amendments](#amendments)) | Steering Committee | ⅔ majority, per person |
-| Changes to [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md) | Steering Committee | ⅔ majority, per person |
-| Adding/removing subprojects | Steering Committee | ⅔ majority, per person |
+| Governance changes (this document, see [Amendments](#amendments)) | Steering Committee | ⅔ majority, one vote per organization |
+| Changes to [CONTRIBUTOR_LADDER.md](CONTRIBUTOR_LADDER.md) | Steering Committee | ⅔ majority, one vote per organization |
+| Adding/removing subprojects | Steering Committee | ⅔ majority, one vote per organization |
+| Steering Committee elections (Community Representative seats) | All CNPG Organization Members, across all subprojects | One vote per organization |
 | Infrastructure Team and Security Response Team membership | Steering Committee | Lazy consensus, falling back to simple majority per person |
 | Adding a member to a committee in caretaker mode (below three members) | Steering Committee | Simple majority, per person |
 | Everything else Steering owns (see [Steering Committee Duties](#steering-committee-duties)) | Steering Committee | Lazy consensus, falling back to simple majority per person |
+
+The other kind of Steering seat, one per subproject, isn't filled by an
+org-balanced vote at all: each subproject's own maintainer committee
+selects its representative internally, simple majority, per person (see
+[Changes in Steering Committee composition](#changes-in-steering-committee-composition)).
 
 ### Subproject-level decisions
 
