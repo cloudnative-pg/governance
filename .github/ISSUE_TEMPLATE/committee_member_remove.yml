@@ -26,6 +26,13 @@ body:
         Steering's backstop on this same issue; Steering then decides by
         simple majority using `.gitvote.yml`'s `default` profile, `/vote`
         (see the section linked above).
+
+        For **Inactivity** the bar is a simple majority after 30 days'
+        notice on this issue with no response from the member. Run the
+        vote with the subproject's add profile instead (`/vote-core`,
+        `/vote-supply-chain`, `/vote-community-ecosystem` or
+        `/vote-extensibility`), and only once the 30 days have passed.
+        The abstention request and Steering backstop work as above.
   - type: dropdown
     id: subproject
     attributes:
@@ -62,6 +69,6 @@ body:
         Explain the reason above. For inactivity, see
         CONTRIBUTOR_LADDER.md's Inactivity section (6 months with no
         contribution or communication, not counting a communicated
-        absence).
+        absence). Say when notice was given, so the 30 days can be checked.
     validations:
       required: true
