@@ -402,8 +402,8 @@ regardless of length: the concern is disappearing without notice, not
 simply being away. Someone returning from a communicated absence resumes
 their role without needing to re-earn it.
 
-<!-- The 6-month floor matches the CNCF template's own approach of measuring
-     inactivity in months of no contribution or communication. -->
+<!-- The CNCF template measures inactivity in months but leaves the number to
+     the project (GOVERNANCE-maintainer.md suggests 6 to 12); 6 is our choice. -->
 
 ## Involuntary Removal
 
@@ -418,8 +418,9 @@ role's requirements, or a Code of Conduct violation.
 
 For Subproject Maintainers, removal is a ⅔ majority of the committee with
 the member under review abstaining, and the Steering Committee is the
-backstop only when that vote has failed or the committee can't convene one
-(see
+backstop only when that vote has failed or the committee can't convene one.
+For inactivity, the committee's bar is a simple majority after 30 days'
+notice, instead of ⅔ (see
 [GOVERNANCE.md's Changes in subproject maintainer committee membership](GOVERNANCE.md#changes-in-subproject-maintainer-committee-membership)
 for the full mechanism).
 

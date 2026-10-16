@@ -336,6 +336,18 @@ convene. That request is made on the same Committee Remove issue,
 escalating it to Steering, which then removes the member by simple
 majority of its own members, per person.
 
+Inactivity has a lighter route, since a member who has gone silent isn't
+contesting anything. Once a member has been
+[inactive](CONTRIBUTOR_LADDER.md#inactivity) for the period defined there,
+any committee or Steering member may open a Committee Remove issue for them
+and notify them there and through any other channel the project has for
+them. If the
+member doesn't respond on that issue within 30 days, the committee may
+remove them by simple majority, per person, instead of ⅔. A response from
+the member, in their capacity as a maintainer, ends the process. The
+member under review abstains and the Steering backstop applies exactly as
+above, at simple majority here too.
+
 <!-- Committee/Steering split mirrors the CNCF project-template's
      GOVERNANCE-subprojects.md individual-subproject-governance mechanism. -->
 
@@ -668,8 +680,8 @@ consequences are worth stating rather than leaving to be discovered. A
 simple majority is reached at exactly half, so two in favour out of four
 eligible voters carries. And at ⅔, a committee of three to five members
 needs every eligible member except the abstaining one, which makes a
-committee-route removal unanimity of the members other than the person
-under review.
+committee-route removal for cause unanimity of the members other than the
+person under review. Removal for inactivity uses a simple majority instead.
 
 Votes happen in the open: a public GitHub issue or discussion, explicit
 +1/-1 comments from eligible voters, and a final tally posted by whoever
@@ -706,7 +718,8 @@ their employers make (see [Project Structure](#project-structure)).
 | Decision Type | Who Votes | Mechanism |
 | :---- | :---- | :---- |
 | Adding a subproject maintainer committee member | The existing members of that committee | Simple majority, per person |
-| Removing a subproject maintainer committee member (committee route) | That committee, with the member under review abstaining | ⅔ majority, per person |
+| Removing a subproject maintainer committee member for cause (committee route) | That committee, with the member under review abstaining | ⅔ majority, per person |
+| Removing an inactive subproject maintainer committee member, after 30 days' notice (committee route) | That committee, with the member under review abstaining | Simple majority, per person |
 | Removing a subproject maintainer committee member (Steering backstop) | Steering Committee | Simple majority, per person |
 | Accepting a new component into the subproject | That subproject's committee | Simple majority, per person |
 | Confirming an Experimental component has reached full status | That subproject's committee | Simple majority, per person |
