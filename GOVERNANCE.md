@@ -337,10 +337,11 @@ escalating it to Steering, which then removes the member by simple
 majority of its own members, per person.
 
 Inactivity has a lighter route, since a member who has gone silent isn't
-contesting anything. Once a member meets the
-[inactivity test](CONTRIBUTOR_LADDER.md#inactivity), any committee or
-Steering member may open a Committee Remove issue for them and notify them
-there and through any other channel the project has for them. If the
+contesting anything. Once a member has been
+[inactive](CONTRIBUTOR_LADDER.md#inactivity) for the period defined there,
+any committee or Steering member may open a Committee Remove issue for them
+and notify them there and through any other channel the project has for
+them. If the
 member doesn't respond on that issue within 30 days, the committee may
 remove them by simple majority, per person, instead of ⅔. A response from
 the member, in their capacity as a maintainer, ends the process. The
