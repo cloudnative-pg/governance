@@ -51,16 +51,17 @@ forward unchanged from before this restructuring:
 
 Per [GOVERNANCE.md's Infrastructure Administration section](GOVERNANCE.md#infrastructure-administration),
 the Infrastructure Team is a distinct body from the Steering Committee,
-even though today's membership happens to be identical. It's the existing
+even though their membership may overlap. It's the existing
 `admins` GitHub team:
 
 | Last Name | First Name | Handle | Organization |
 | --- | --- | --- | --- |
 | Bartolini | Gabriele | @gbartolini | EDB |
+| Battiato | Jonathan | @jbattiato | EDB |
 | Canovai | Francesco | @fcanovai | EDB |
-| Cecchi | Leonardo | @leonardoce | EDB |
+| Fei | Niccolò | @NiccoloFei | EDB |
+| Li | Tao | @litaocdl | EDB |
 | Nenciarini | Marco | @mnencia | EDB |
-| Ruocco | Armando | @armru | EDB |
 
 ## Security Response Team
 
