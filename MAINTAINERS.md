@@ -164,4 +164,3 @@ The following individuals have previously served as maintainers and are
 recognised for their valuable contributions to the project:
 
 - Jonathan Gonzalez (EDB)
-- Philippe Scorsolini (Upbound)
