@@ -21,12 +21,16 @@ email addresses for security purposes are recorded in
 Every subproject has a committee, of at least three members (see
 [GOVERNANCE.md's Changes in subproject maintainer committee
 membership](GOVERNANCE.md#changes-in-subproject-maintainer-committee-membership)).
-All four are seeded with the same five people, the CloudNativePG
+All four were seeded with the same five people, the CloudNativePG
 Maintainers as they stood before this restructuring, because that is who
-held the authority being divided up. That is the starting point, not the
-intended end state: each committee is self-selecting from the established
-Component Owners of its own subproject's repositories, and the four are
-expected to diverge as those people are promoted into them. Two changes
+held the authority being divided up. The initial membership of all four
+was ratified in
+[#100](https://github.com/cloudnative-pg/governance/issues/100): Core and
+Extensibility kept that seed, while Supply Chain and Community, Docs &
+Ecosystem were opened to the Component Owners listed below. Each
+committee is self-selecting from the established Component Owners of its
+own subproject's repositories, and Core and Extensibility are expected to
+diverge as those people are promoted into them. Two changes
 still to come are tracked publicly:
 [#68](https://github.com/cloudnative-pg/governance/issues/68) for
 org-balanced voting and the Steering seat mechanism, and
@@ -99,10 +103,14 @@ Technical authority over every component listed in
 | Last Name | First Name | Handle | Organization |
 | --- | --- | --- | --- |
 | Bartolini | Gabriele | @gbartolini | EDB |
-| Canovai | Francesco | @fcanovai | EDB |
-| Cecchi | Leonardo | @leonardoce | EDB |
+| Battiato | Jonathan | @jbattiato | EDB |
+| Fedi | Gabriele | @GabriFedi97 | EDB |
+| Fei | Niccolò | @NiccoloFei | EDB |
+| Grudev | Itay | @itay-grudev | Verito Digital |
+| Li | Tao | @litaocdl | EDB |
 | Nenciarini | Marco | @mnencia | EDB |
-| Ruocco | Armando | @armru | EDB |
+| Schneider | Jeremy | @ardentperf | GEICO |
+| Scorsolini | Philippe | @phisco | Upbound |
 
 ## Community, Docs & Ecosystem Maintainers
 
@@ -111,11 +119,12 @@ Technical authority over every component listed in
 
 | Last Name | First Name | Handle | Organization |
 | --- | --- | --- | --- |
-| Bartolini | Gabriele | @gbartolini | EDB |
 | Canovai | Francesco | @fcanovai | EDB |
 | Cecchi | Leonardo | @leonardoce | EDB |
-| Nenciarini | Marco | @mnencia | EDB |
-| Ruocco | Armando | @armru | EDB |
+| Drees | Floor | @FloorD | EDB |
+| Grudev | Itay | @itay-grudev | Verito Digital |
+| Nocentini | Tamara | @TamaraNocentini | EDB |
+| Schneider | Jeremy | @ardentperf | GEICO |
 
 ## Extensibility Maintainers
 
