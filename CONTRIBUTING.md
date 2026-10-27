@@ -75,3 +75,24 @@ If you are reporting a vulnerability, please refer to the
 > [development contribution guide](https://github.com/cloudnative-pg/cloudnative-pg/blob/main/contribute/README.md)
 > for complete details.
 
+
+## Security vulnerabilities and CRA escalation
+
+Do not report vulnerabilities through public issues or pull requests. Follow
+the `SECURITY.md` of the relevant repository; the
+[CloudNativePG Security Policy](https://github.com/cloudnative-pg/cloudnative-pg/blob/main/SECURITY.md)
+is the reference policy.
+
+CloudNativePG is supported under the Linux Foundation CRA stewardship
+framework. Maintainers escalate exactly two kinds of event to the Linux
+Foundation steward at steward@linuxfoundation.org:
+
+- **Actively exploited vulnerabilities**: a vulnerability for which the project
+  has reliable evidence that a malicious actor has exploited it.
+- **Severe incidents**: a security compromise of the project's own IT
+  infrastructure (for example repositories, CI/CD pipelines, release signing
+  keys or the container registry).
+
+Ordinary vulnerabilities with no evidence of exploitation are not escalation
+events and follow the normal `SECURITY.md` process. Remediation never waits on
+the escalation decision.
