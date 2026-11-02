@@ -30,12 +30,10 @@ Extensibility kept that seed, while Supply Chain and Community, Docs &
 Ecosystem were opened to the Component Owners listed below. Each
 committee is self-selecting from the established Component Owners of its
 own subproject's repositories, and Core and Extensibility are expected to
-diverge as those people are promoted into them. Two changes
-still to come are tracked publicly:
+diverge as those people are promoted into them. One change
+still to come is tracked publicly:
 [#68](https://github.com/cloudnative-pg/governance/issues/68) for
-org-balanced voting and the Steering seat mechanism, and
-[#69](https://github.com/cloudnative-pg/governance/issues/69) for the
-pathway that brings maintainers from outside EDB onto these committees.
+org-balanced voting and the Steering seat mechanism.
 
 ## Steering Committee
 
